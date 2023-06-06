@@ -1,0 +1,15 @@
+.Item{
+    width: 5rem;
+    border: 1px solid red;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Item img{
+    width: 100%;
+}
+.Item *{
+    border: 1px solid rebeccapurple;
+}
