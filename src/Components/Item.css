@@ -1,5 +1,5 @@
 .Item{
-    width: 5rem;
+    width: 70%;
     border: 1px solid red;
     height: fit-content;
     display: flex;
@@ -12,4 +12,9 @@
 }
 .Item *{
     border: 1px solid rebeccapurple;
+}
+@media screen and (min-width: 480px) {
+    .Item{
+        width: 300px;
+    }
 }

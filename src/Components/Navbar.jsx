@@ -1,12 +1,16 @@
 import './Navbar.css'
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 
 function NavBar(){
     let [size,setSize] = useState(0)
     useEffect(() => {
-        setSize(window.innerWidth)
+        window.addEventListener('resize',()=>{
+            setSize(window.innerWidth);
+        })
     },[])
+
+    
 
     return(
         <div className="Navbar">
