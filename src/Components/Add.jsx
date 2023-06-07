@@ -5,23 +5,28 @@ import { Context } from '../Context/Context'
 
 
 function Add({title}){
-    let {AddList} = useContext(Context)
+    let {AddList,SubList, Cart} = useContext(Context)
     let [cant, setCant] = useState(1)
     let maxCant = 3;
+    console.log(Cart)
     function Inc(){
         if(cant < maxCant)
             setCant(cant+1);
     }
     function Dec(){
+        if(Cart){
+            SubList({title:title,descr:1})
+            return
+        }
         if(cant > 1)
             setCant(cant -1);
     }
     return(
         <div className='Add'>
             <button onClick={Dec}>-</button>
-            <span>{cant}</span>
+            {!Cart&&<span>{cant}</span>}
             <button onClick={Inc}>+</button>
-            <button onClick={() => AddList({name:title,cantidad:cant})}>Agregar</button>
+            {!Cart&&<button onClick={() => AddList({title:title,descr:cant})}>Agregar</button>}
         </div>
     )
 }

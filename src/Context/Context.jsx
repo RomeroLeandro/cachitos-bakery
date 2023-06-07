@@ -9,12 +9,12 @@ export function ContextProvider({children}){
     function StCarrt(estado){
         setCart(estado)
     }
-    console.log(StCarrt)
+
     function AddList(item){
         let list = lista;
         for (let i = 0; i< lista.length;i++){
             if(lista[i].name === item.name){
-                list[i].cantidad += item.cantidad;
+                list[i].descr += item.descr;
                 console.log("Agregado")
                 setLista(list)
                 console.log(lista)
@@ -24,9 +24,17 @@ export function ContextProvider({children}){
         setLista([...list,item])
     }
 
-    function SubList(item,cant){
-        
-
+    function SubList(item){
+        let list = lista;
+        for (let i = 0; i< lista.length;i++){
+            if(lista[i].title === item.title){
+                list[i].descr -= item.descr;
+                console.log("Agregado")
+                setLista(list)
+                console.log(lista)
+                return
+            }
+        }
     }
     function Clean(){
         setLista([])
@@ -38,8 +46,8 @@ export function ContextProvider({children}){
     },[lista])
     return(
         <Context.Provider value={{
-            Cart,Cart,
-            StCarrt,StCarrt:
+            Cart:Cart,
+            StCarrt:StCarrt,
             lista,lista,
             AddList:AddList,
             SubList:SubList,

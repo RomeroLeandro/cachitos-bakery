@@ -1,18 +1,21 @@
 import './Carrito.css'
-import { useSate, useContext} from 'react'
+import { useContext} from 'react'
 import { Context } from '../Context/Context'
 import Item from './Item'
 
 function Carrito(){
-    let { Lista, Addlist, SubList } = useContext(Context)
+    let { lista, Addlist, SubList } = useContext(Context)
 
     return(
         <div className="Carrito">
-            <h2>Menu</h2>
-            {Lista.map((item) => {
-                return(<Item key={item.id} Producto={{title:item,descr:item.cantidad}}/>)
-            })}
-            {/* <Item Producto = {Productos[0]}/> */}
+            <h2>Carrito</h2>
+            {lista !== undefined
+                ?lista.map((item,index) => {
+                    return(<Item key={item.id} Producto={lista[index]}/>)
+                })
+                :<h1>Carrito Vacio</h1>
+            }
+            
         </div>
     )
 }
