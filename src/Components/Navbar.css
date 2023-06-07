@@ -1,6 +1,6 @@
 .Navbar{
     display:flex;
-    padding:2rem;
+    height: 10rem;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
@@ -10,6 +10,13 @@
     position: absolute;
     left: 1rem;
 }
+.Navbar img{
+    position: absolute;
+    right: 1rem;
+    padding-top: 1rem;
+    width: 200px;
+}
+
 
 
 

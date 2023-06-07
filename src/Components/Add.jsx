@@ -17,6 +17,7 @@ function Add(){
             <button onClick={Dec}>-</button>
             <span>{cant}</span>
             <button onClick={Inc}>+</button>
+            <button>Agregar</button>
         </div>
     )
 }

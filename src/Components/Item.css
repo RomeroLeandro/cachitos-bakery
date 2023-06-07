@@ -13,7 +13,7 @@
 .Item *{
     border: 1px solid rebeccapurple;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 400px) {
     .Item{
         width: 300px;
     }
