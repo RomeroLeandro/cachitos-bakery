@@ -4,20 +4,15 @@ import { useContext } from 'react'
 import { Context } from '../Context/Context'
 
 
-function Add({title}){
-    let {AddList,SubList, Cart} = useContext(Context)
+function Add({title,id}){
+    let {AddList, Cart} = useContext(Context)
     let [cant, setCant] = useState(1)
     let maxCant = 3;
-    console.log(Cart)
     function Inc(){
         if(cant < maxCant)
             setCant(cant+1);
     }
     function Dec(){
-        if(Cart){
-            SubList({title:title,descr:1})
-            return
-        }
         if(cant > 1)
             setCant(cant -1);
     }
@@ -26,7 +21,7 @@ function Add({title}){
             <button onClick={Dec}>-</button>
             {!Cart&&<span>{cant}</span>}
             <button onClick={Inc}>+</button>
-            {!Cart&&<button onClick={() => AddList({title:title,descr:cant})}>Agregar</button>}
+            {!Cart&&<button onClick={() => AddList({id:id,title:title,descr:cant})}>Agregar</button>}
         </div>
     )
 }

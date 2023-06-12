@@ -24,7 +24,7 @@ let Productos = [
     },
     {
         id:"id4",
-        title:"Producto3",
+        title:"Producto4",
         descr:"Descripcion de producto",
         price:"Precio",
         pic:Pic1

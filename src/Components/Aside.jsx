@@ -3,7 +3,6 @@ import { useContext } from 'react'
 import { Context } from '../Context/Context'
 function Aside(){
     let {StCarrt} = useContext(Context)
-    console.log("cart",StCarrt)
     return(
         <aside className='Aside'>
             <h3>Info</h3>

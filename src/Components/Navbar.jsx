@@ -14,7 +14,7 @@ function NavBar(){
     return(
         <div className="Navbar">
             <h2 id='menu'>{size > 400? "Menu" : ">"}</h2>
-            {size > 400 && <h1>Cachitos</h1>}
+            {size >= 400 && <h1>Cachitos Bakery</h1>}
             <img className='Logo' src={Logo} alt='Logo Cachitos Bakery'></img>
         </div>
     )

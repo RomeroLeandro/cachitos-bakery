@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 
 export let Context = createContext()
@@ -13,7 +13,7 @@ export function ContextProvider({children}){
     function AddList(item){
         let list = lista;
         for (let i = 0; i< lista.length;i++){
-            if(lista[i].name === item.name){
+            if(lista[i].title === item.title){
                 list[i].descr += item.descr;
                 console.log("Agregado")
                 setLista(list)
@@ -41,14 +41,14 @@ export function ContextProvider({children}){
     }
 
 
-    useEffect(() => {
-        console.log(lista)
-    },[lista])
+    // useEffect(() => {
+    //     console.log(lista)
+    // },[lista])
     return(
         <Context.Provider value={{
             Cart:Cart,
             StCarrt:StCarrt,
-            lista,lista,
+            lista:lista,
             AddList:AddList,
             SubList:SubList,
             Clean:Clean
