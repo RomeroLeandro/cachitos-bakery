@@ -11,10 +11,12 @@
     left: 1rem;
 }
 .Navbar img{
-    position: absolute;
     right: 1rem;
     padding-top: 1rem;
     width: 200px;
+}
+.Navbar h2{
+    min-width: 100px;
 }
 
 

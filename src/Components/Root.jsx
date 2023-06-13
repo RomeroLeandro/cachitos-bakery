@@ -1,19 +1,20 @@
 import './Root.css'
-import Aside from "./Aside";
+import SideBar from "./SideBar";
 import Body from "./Body";
 import Carrito from './Carrito';
-import { Context } from '../Context/Context';
-import { useContext } from 'react';
+import { useParams } from 'react-router-dom';
 
 function Root(){
-    let { Cart } = useContext(Context)
+    let { section } = useParams();
+    let seccion = {
+        "menu":<Body/>,
+        "cart":<Carrito/>,
+        undefined:<Body/>
+    }
     return(
         <div className="Root">
-            <Aside/>
-            {Cart === 1
-                ?<Carrito/> 
-                :<Body></Body>
-            }
+            <SideBar/>
+            {seccion[section]}
             {/* <Body></Body> */}
         </div>
     )

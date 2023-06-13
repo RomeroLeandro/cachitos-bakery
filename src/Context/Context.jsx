@@ -1,13 +1,16 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 
 export let Context = createContext()
 
 export function ContextProvider({children}){
     let [lista,setLista] = useState([])
-    let [Cart, setCart] = useState(0);
-    function StCarrt(estado){
-        setCart(estado)
+    let [sideBar, setSideBar] = useState(0);
+    useEffect(() => {
+        console.log(sideBar)
+    },[sideBar])
+    function OpenSideBar(){
+        setSideBar(1-sideBar);
     }
 
     function AddList(item){
@@ -40,14 +43,10 @@ export function ContextProvider({children}){
         setLista([])
     }
 
-
-    // useEffect(() => {
-    //     console.log(lista)
-    // },[lista])
     return(
         <Context.Provider value={{
-            Cart:Cart,
-            StCarrt:StCarrt,
+            OpenSideBar:OpenSideBar,
+            sideBar:sideBar,
             lista:lista,
             AddList:AddList,
             SubList:SubList,
