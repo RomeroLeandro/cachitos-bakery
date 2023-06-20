@@ -1,7 +1,8 @@
 import React from 'react'
+import './Find.css';
 
 export const Find = () => {
     return (
-        <div>Find</div>
+        <div className='menu'>Find</div>
     )
 }
