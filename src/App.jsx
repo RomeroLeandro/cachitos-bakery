@@ -43,17 +43,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <NavBar />
-        <WhatsappIcon />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/menu' element={<Menu />} />
-          <Route path='/novedades' element={<Find />} />
-          <Route path='comopedir' element={<HowAsk />} />
-          <Route path='/sobrenosotros' element={<About />} />
-          <Route path='/contacto' element={<Contact />} />
-          <Route path='/comunidad' element={<Community />} />
-        </Routes>
         <Modal
           isOpen={isModalOpen}
           onRequestClose={closeModal}
@@ -77,6 +66,18 @@ function App() {
           <p>¿En qué podemos ayudarte?</p>
           <button onClick={closeModal} className='button-name'>Programar pedido</button>
         </Modal>
+        <NavBar />
+        <WhatsappIcon />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/menu' element={<Menu />} />
+          <Route path='/novedades' element={<Find />} />
+          <Route path='comopedir' element={<HowAsk />} />
+          <Route path='/sobrenosotros' element={<About />} />
+          <Route path='/contacto' element={<Contact />} />
+          <Route path='/comunidad' element={<Community />} />
+        </Routes>
+
       </BrowserRouter>
     </>
   );

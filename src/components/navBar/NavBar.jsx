@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import logo from '../../assets/logo/cachitos-logo.PNG'
+import { Aside } from './aside/Aside';
 
 export const NavBar = () => {
 
@@ -45,35 +46,8 @@ export const NavBar = () => {
     ];
     return (
         <header>
-            <aside className={`navbar ${isOpen ? 'open' : ''}`}>
-                <input
-                    type="checkbox"
-                    id="checkbox"
-                    checked={isOpen}
-                    onChange={toggleNavbar}
-                />
-                <label htmlFor="checkbox" className={`toggle ${isOpen ? 'open' : ''}`}>
-                    <div className="bars" id="bar1"></div>
-                    <div className="bars" id="bar2"></div>
-                    <div className="bars" id="bar3"></div>
-                </label>
-                {isOpen && (
-                    <div    >
-                        <ul className="navbar-items">
-                            {links.map((el) => {
-                                return (
-                                    <li key={el.id} className='lista'>
-                                        <Link to={`/${el.link}`}>{el.nombre}</Link>
-                                    </li>)
-                            })}
-                        </ul>
-                        <div>
-                            {/* Facebook and Instagram logos */}
-                        </div>
-                    </div>
-                )}
-            </aside>
-            <nav>
+            <Aside />
+            <nav className='nav-header'>
                 <Link to={`/`}>
                     <img src={logo} alt="imagen" /></Link>
                 <div className='iconsNav'>

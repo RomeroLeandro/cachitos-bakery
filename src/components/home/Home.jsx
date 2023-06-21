@@ -26,7 +26,7 @@ export const Home = () => {
   }, [images.length]);
 
   return (
-    <div>
+    <div className='home'>
       <div className="carousel-container"> {/* Contenedor personalizado */}
         <Carousel selectedItem={activeIndex} showThumbs={false} showStatus={false}>
           {images.map((image, index) => (

@@ -1,16 +1,23 @@
 
 header{
   position: sticky;
+  top: 0;
   z-index: 1000;
 }
-
+.nav-header{
+  height:60px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   width: 60px;
-  background-color: #ffffff00;
+  background-color: transparent;
   transition: width 0.3s ease-in-out;
   height: 100vh;
   padding: 10px;
@@ -35,6 +42,7 @@ header{
   justify-content: center;
   gap: 10px;
   transition-duration: .5s;
+  background-color: transparent;
 }
 
 
@@ -79,15 +87,10 @@ header{
   transition-duration: .5s;
   transform: rotate(180deg);
 }
-nav{
-  margin-left: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-}
+
 nav img{
   width: 70px;
+  margin-left: 60px;
 }
 .navbar-items {
   list-style-type: none;
