@@ -32,7 +32,6 @@ export const Home = () => {
           {images.map((image, index) => (
             <div key={index}>
               <img src={image.url} alt={image.title} className="carousel-image" /> {/* Aplica la clase de estilo al elemento img */}
-              <p className="legend">{image.title}</p>
             </div>
           ))}
         </Carousel>

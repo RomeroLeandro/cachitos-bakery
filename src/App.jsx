@@ -11,6 +11,7 @@ import { Menu } from './components/menu/Menu';
 import { HowAsk } from './components/howAsk/HowAsk';
 import { Find } from './components/find/Find';
 import { Home } from './components/home/Home';
+import { WhatsappIcon } from './components/whatsapp-icon/WhatsappIcon';
 
 
 
@@ -43,6 +44,7 @@ function App() {
     <>
       <BrowserRouter>
         <NavBar />
+        <WhatsappIcon />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/menu' element={<Menu />} />
