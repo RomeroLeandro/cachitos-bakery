@@ -1,6 +1,7 @@
 
 header{
-  position: sticky
+  position: sticky;
+  z-index: 1000;
 }
 
 .navbar {
@@ -9,7 +10,7 @@ header{
   left: 0;
   bottom: 0;
   width: 60px;
-  background-color: #fff;
+  background-color: #ffffff00;
   transition: width 0.3s ease-in-out;
   height: 100vh;
   padding: 10px;

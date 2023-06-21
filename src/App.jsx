@@ -10,6 +10,7 @@ import { Community } from './components/community/Community';
 import { Menu } from './components/menu/Menu';
 import { HowAsk } from './components/howAsk/HowAsk';
 import { Find } from './components/find/Find';
+import { Home } from './components/home/Home';
 
 
 
@@ -43,6 +44,7 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
+          <Route path='/' element={<Home />} />
           <Route path='/menu' element={<Menu />} />
           <Route path='/novedades' element={<Find />} />
           <Route path='comopedir' element={<HowAsk />} />
