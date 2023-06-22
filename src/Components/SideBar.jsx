@@ -8,14 +8,8 @@ function SideBar(){
         !sideBar 
             ? <aside className='Aside0'/>
             : (<aside className='Aside1'>
-                    <h3>Info</h3>
-                    <h3>Whatsapp</h3>
-                    <h3>Instagram</h3>
                     <Link to = "/menu"><h3 >Menu</h3></Link>
                     <Link to = "/cart"><h3 >Carrito</h3></Link>
-                    {/* <button onClick={() => StCarrt(0)}>Menu</button>
-                    <button onClick={() => StCarrt(1)}>Carrito</button> */}
-                    {/* <h3>Carrito</h3> */}
                 </aside>)
 
 

@@ -1,6 +1,6 @@
 .Navbar{
     display:flex;
-    height: 10rem;
+    height: 5rem;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
@@ -12,8 +12,8 @@
 }
 .Navbar img{
     right: 1rem;
-    padding-top: 1rem;
-    width: 200px;
+    padding-top: 0.5rem;
+    height: 8rem;
 }
 .Navbar h2{
     min-width: 100px;

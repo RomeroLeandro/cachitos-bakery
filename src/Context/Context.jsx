@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 
 export let Context = createContext()
@@ -6,9 +6,7 @@ export let Context = createContext()
 export function ContextProvider({children}){
     let [lista,setLista] = useState([])
     let [sideBar, setSideBar] = useState(0);
-    useEffect(() => {
-        console.log(sideBar)
-    },[sideBar])
+    
     function OpenSideBar(){
         setSideBar(1-sideBar);
     }
