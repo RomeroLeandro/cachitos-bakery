@@ -22,15 +22,19 @@ export const HowAsk = () => {
             <p>Y</p>
             <a href="https://api.whatsapp.com/send?phone=541155755890" target="_blank" rel="noopener noreferrer">092090229</a>
           </div>
-
         </div>
-
-        <div>
-
-
-        </div>
-
       </div>
+      <div>
+        <p>Llámanos</p>
+        <div>
+          {/* <img src={whatsapp} alt="WhatsApp Icon" className="whatsapp" /> */}
+          <div>
+            <p>LLAMADAS:</p>
+            <a href="https://api.whatsapp.com/send?phone=541155755890" target="_blank" rel="noopener noreferrer">092090229</a>
+          </div>
+        </div>
+      </div>
+      <button className='button-home'>DEJANOS UN MENSAJE</button>
     </div >
   )
 }
