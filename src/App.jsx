@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     const currentHour = moment().hour();
-    const isOutsideHours = currentHour < 8 || currentHour >= 9;
+    const isOutsideHours = currentHour < 9 || currentHour >= 22;
 
     setIsOutsideBusinessHours(isOutsideHours);
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import instagram from '../../../assets/icons/instagram.png'
 
 export const Aside = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +12,7 @@ export const Aside = () => {
     {
       id: 1,
       link: "menu",
-      nombre: "menu"
+      nombre: "Menu"
     },
     {
       id: 2,
@@ -21,12 +22,12 @@ export const Aside = () => {
     {
       id: 3,
       link: "novedades",
-      nombre: "Novedades"
+      nombre: "Novedades y promociones"
     },
     {
       id: 4,
       link: "sobrenosotros",
-      nombre: "Sobre nosotros"
+      nombre: "Quienes somos"
     },
     {
       id: 5,
@@ -63,7 +64,9 @@ export const Aside = () => {
             })}
           </ul>
           <div>
-            {/* Facebook and Instagram logos */}
+            {/* <a href="http://" target="_blank" rel="noopener noreferrer">
+              <img src={instagram} alt="" className='img-wpp-how-ask' />
+            </a> */}
           </div>
         </nav>
       )}
