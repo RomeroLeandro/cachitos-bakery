@@ -15,8 +15,8 @@ import { Find } from '../find/Find';
 export const Home = () => {
   const images = [
     { url: menu, title: 'Imagen menu', redirectTo: '/menu' },
-    { url: comoPedir, title: 'Imagen como pedir', redirectTo: '/novedades' },
-    { url: promociones, title: 'Imagen promociones', redirectTo: '/comopedir' },
+    { url: comoPedir, title: 'Imagen como pedir', redirectTo: '/comopedir' },
+    { url: promociones, title: 'Imagen promociones', redirectTo: '/novedades' },
     { url: conocenos, title: 'Imagen conocenos', redirectTo: '/sobrenosotros' }
   ];
 
@@ -36,11 +36,12 @@ export const Home = () => {
         <Carousel selectedItem={activeIndex} showThumbs={false} showStatus={false}>
           {images.map((image, index) => (
             <div key={index}>
-              <Link to={'image.roadto'}>
-                <img src={image.url} alt={image.title} className="carousel-image" /> {/* Aplica la clase de estilo al elemento img */}
+              <Link to={image.redirectTo}>
+                <div className="image-container">
+                  <img src={image.url} alt={image.title} className="carousel-image" />
+                </div>
               </Link>
             </div>
-
           ))}
         </Carousel>
       </div>
