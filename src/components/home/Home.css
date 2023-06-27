@@ -1,5 +1,5 @@
 .home{
-  height: calc(100vh - 60px);
+  height: calc(100% - 60px);
 }
 
 .text-cachitos{
@@ -37,4 +37,9 @@ line-height: 18px;
   align-items: center;
   gap: 15px;
   height: 50%;
+}
+
+.carousel-image{
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
 }

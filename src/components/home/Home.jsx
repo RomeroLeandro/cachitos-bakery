@@ -2,17 +2,22 @@ import React, { useState, useEffect } from 'react';
 import './Home.css';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import image1 from '../../assets/carousel/banner-cachitos.png';
-import image2 from '../../assets/carousel/banner-pan.png';
-import image3 from '../../assets/carousel/banner-tequeños.png';
+import menu from '../../assets/carousel/menu.png';
+import comoPedir from '../../assets/carousel/como-pedir.png';
+import promociones from '../../assets/carousel/promociones.png';
+import conocenos from '../../assets/carousel/conocenos.png';
 import { Link } from 'react-router-dom';
 import textCachitos from '../../assets/logo/nombre-cachitos.png'
+import { HowAsk } from '../howAsk/HowAsk';
+import { Contact } from '../contact/Contact';
+import { Find } from '../find/Find';
 
 export const Home = () => {
   const images = [
-    { url: image1, title: 'Imagen cachitos' },
-    { url: image2, title: 'Imagen pan' },
-    { url: image3, title: 'Imagen tequeños' },
+    { url: menu, title: 'Imagen menu', redirectTo: '/menu' },
+    { url: comoPedir, title: 'Imagen como pedir', redirectTo: '/novedades' },
+    { url: promociones, title: 'Imagen promociones', redirectTo: '/comopedir' },
+    { url: conocenos, title: 'Imagen conocenos', redirectTo: '/sobrenosotros' }
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -31,8 +36,11 @@ export const Home = () => {
         <Carousel selectedItem={activeIndex} showThumbs={false} showStatus={false}>
           {images.map((image, index) => (
             <div key={index}>
-              <img src={image.url} alt={image.title} className="carousel-image" /> {/* Aplica la clase de estilo al elemento img */}
+              <Link to={'image.roadto'}>
+                <img src={image.url} alt={image.title} className="carousel-image" /> {/* Aplica la clase de estilo al elemento img */}
+              </Link>
             </div>
+
           ))}
         </Carousel>
       </div>

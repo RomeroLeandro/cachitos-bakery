@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './HowAsk.css';
 import Modal from 'react-modal';
-import whatsapp from '../../assets/icons/whatsapp.svg'
+import whatsapp from '../../assets/icons/whatsapp.png'
 import '../whatsapp-icon/whatsappIcon.css';
 
 export const HowAsk = () => {
