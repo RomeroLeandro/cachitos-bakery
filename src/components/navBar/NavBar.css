@@ -19,7 +19,7 @@ header{
   width: 60px;
   background-color: transparent;
   transition: width 0.3s ease-in-out;
-  height: 100vh;
+  height: calc(100vh - 60px);
   padding: 10px;
 }
 
