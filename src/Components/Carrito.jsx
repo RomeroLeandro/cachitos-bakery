@@ -19,7 +19,7 @@ function Carrito(){
     function Finish(){
         let message = `Pedido: ${lista.map((item) =>{
             console.log("Aca")
-            let pr = `${item.descr} ${item.title}\n`
+            let pr = `${item.cant} ${item.title}\n`
             return pr
         })}`
         window.open(`https://wa.me/5492664006000?text=${message}`)

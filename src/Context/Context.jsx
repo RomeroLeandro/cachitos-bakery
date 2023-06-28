@@ -15,7 +15,7 @@ export function ContextProvider({children}){
         let list = lista;
         for (let i = 0; i< lista.length;i++){
             if(lista[i].title === item.title){
-                list[i].descr += item.descr;
+                list[i].cant += item.cant;
                 console.log("Agregado")
                 setLista(list)
                 console.log(lista)
@@ -30,7 +30,7 @@ export function ContextProvider({children}){
         let list = lista;
         for (let i = 0; i< lista.length;i++){
             if(lista[i].title === item.title){
-                list[i].descr -= item.descr;
+                list[i].cant -= item.cant;
                 console.log("Agregado")
                 setLista(list)
                 console.log(lista)

@@ -5,8 +5,8 @@ import { Context } from '../Context/Context'
 
 
 
-function Add({add}){
-    let [cant, setCant] = useState(1)
+function Add({add,cantidad = 1}){
+    let [cant, setCant] = useState(cantidad)
     let { AddList,SubList } = useContext(Context)
     let { section } = useParams();
     let maxCant = 3;
@@ -24,7 +24,7 @@ function Add({add}){
     return(
         <div className='Add'>
             <button onClick={Dec}>-</button>
-            {section !== "cart" && <span>{cant}</span>}
+            {<span>{cant}</span>}
             <button onClick={Inc}>+</button>
             {section !== "cart" && <button onClick={() => add(cant)}>Agregar</button>}
         </div>
