@@ -23,6 +23,7 @@ export function ContextProvider({children}){
             }
         }
         setLista([...list,item])
+        console.log(lista,"contexto")
     }
 
     function SubList(item){

@@ -7,14 +7,15 @@ function Carrito(){
     let { lista } = useContext(Context)
     let [arr,setArr] = useState([])
     // let arr = []
-    useEffect(() => {
-        lista.map(((item,index) => {
-            return(
-                setArr([...arr,<Item key={item.id} Producto={lista[index]}/>])
-            )
-        }))
-        console.log("lista",arr)
-    },[lista])
+    // useEffect(() => {
+    //     // console.log(lista)
+    //     // lista.map(((item,index) => {
+    //     //     return(
+    //     //         setArr([...arr,<Item key={item.id} Producto={lista[index]}/>])
+    //     //     )
+    //     // }))
+    //     // console.log("lista",arr)
+    // },[lista])
     function Finish(){
         let message = `Pedido: ${lista.map((item) =>{
             console.log("Aca")
@@ -30,7 +31,9 @@ function Carrito(){
             {arr}
             {lista.length > 0
                 ?<>
-                    {arr}
+                    {lista.map((item,index) => {
+                        return<Item key={item.id} Producto={lista[index]}/>
+                    })}
                     <button onClick={Finish}>Finalizar Pedido</button>
                 </>
                 :<h1>Carrito Vacio</h1>
