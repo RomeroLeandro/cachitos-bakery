@@ -8,6 +8,10 @@ export const Aside = () => {
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleItemClick = () => {
+    setIsOpen(false);
+  };
   const links = [
     {
       id: 1,
@@ -58,7 +62,7 @@ export const Aside = () => {
           <ul className="navbar-items">
             {links.map((el) => {
               return (
-                <li key={el.id} className='lista'>
+                <li key={el.id} className='lista' onClick={handleItemClick}>
                   <Link to={`/${el.link}`}>{el.nombre}</Link>
                 </li>)
             })}

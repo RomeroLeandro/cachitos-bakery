@@ -4,8 +4,8 @@
 
 .text-cachitos{
   display: flex;
-width: 147px;
-height: 49px;
+width: 50%;
+/* height: 49px; */
 justify-content: center;
 align-items: center;
 flex-shrink: 0;

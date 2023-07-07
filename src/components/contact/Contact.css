@@ -1,5 +1,65 @@
-.menu{
-  width: 100%;
+.container-contact{
   display: flex;
-justify-content: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+  width: auto;
+  height: auto;
+  margin: 0 10px;
+  margin-top: 30px;
+  background: rgb(236, 236, 236);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 20px;
+  border-top: 20px solid #ec9139;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  padding: 20px 10px;
+}
+.text-contact{
+  text-align: center;
+  font-family: Agane;
+  font-size: 16px;
+}
+.tittle-contact{
+  font-family: Adigiana;
+  font-size: 26px;
+  color: #A44C04;
+  text-align: center;
+}
+.container-label{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+.container-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 75%;
+}
+.container-form input, .container-form textarea{
+  height: 35px;
+  border:1px solid;
+  border-color: #A44C04;
+  font-size: 16px;
+  background-color: transparent;
+  padding: 5px;
+  font-family: Agane;
+}
+.container-form textarea{
+  height: 150px;
+  resize: none  ;
+
+}
+.container-form label{
+  color: #A44C04;
+  font-family: Agane;
+  font-size: 16px;
 }
