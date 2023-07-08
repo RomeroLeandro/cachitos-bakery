@@ -1,4 +1,4 @@
-#checkbox {
+/* #checkbox {
   display: none;
 }
 
@@ -14,6 +14,10 @@
   gap: 10px;
   transition-duration: .5s;
   
+}
+
+.toggle.open{
+  width: 100%;
 }
 .container-toggle{
   z-index: 999;
@@ -59,4 +63,4 @@
 #checkbox:checked + .toggle {
   transition-duration: .5s;
   transform: rotate(180deg);
-}
+} */

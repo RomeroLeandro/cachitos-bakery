@@ -7,7 +7,9 @@ header {
 aside {
   z-index: 999;
 }
-
+.lista a{
+  font-family: Agane;
+}
 .nav-header {
   height: 60px;
   background-color: #fff;
@@ -33,6 +35,7 @@ aside {
   height: 100vh;
   width: 250px;
   background-color: #ec9139;
+  transition: width 0.3s ease-out;
 }
 
 #checkbox {
@@ -52,6 +55,11 @@ aside {
   transition-duration: .5s;
   background-color: transparent;
 }
+.toggle.open{
+  margin-left: 180px;
+  transition-duration: .25s;
+}
+
 
 .bars {
   width: 100%;
@@ -65,7 +73,7 @@ aside {
 }
 
 #bar1, #bar3 {
-  width: 70%;
+  width: 100%;
 }
 
 #checkbox:checked + .toggle .bars {
@@ -104,9 +112,21 @@ nav img {
   padding: 0;
   margin-top: 20px;
 }
-
+.nav-aside{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.nav-aside div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .navbar-items li {
-  padding: 10px;
+  width: 100%;
+  padding: 10px 0px;
   border-bottom: 1px solid #000;
 }
 
