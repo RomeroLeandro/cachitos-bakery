@@ -86,6 +86,10 @@ a{
   transform: translateY(2px);
  }
 
+ button{
+  cursor: pointer;
+ }
+
  .modal-overlay {
   display: flex;
   align-items: center;

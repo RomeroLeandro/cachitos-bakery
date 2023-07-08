@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import './Community.css';
-import {Comments} from "./comments/Comments";
-import {Opinion} from "./opinion/Opinion";
+import { Comments } from "./comments/Comments";
+import { Opinion } from "./opinion/Opinion";
 
 export const Community = () => {
     const [comentarios, setComentarios] = useState([
@@ -29,10 +29,16 @@ export const Community = () => {
     return (
         <div className='nav-community'>
             <div className='container-buttons-community'>
-                <button className='buttons-community' onClick={() => showComponent('Com')}>
+                <button
+                    className={`buttons-community ${showComments ? 'selected' : ''}`}
+                    onClick={() => showComponent('Com')}
+                >
                     COMENTARIOS
                 </button>
-                <button className='buttons-community' onClick={() => showComponent('Op')}>
+                <button
+                    className={`buttons-community ${showOpinion ? 'selected' : ''}`}
+                    onClick={() => showComponent('Op')}
+                >
                     TU OPINIÓN
                 </button>
             </div>

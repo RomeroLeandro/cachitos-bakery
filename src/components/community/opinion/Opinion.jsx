@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import './Opinion.css'
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 export const Opinion = ({ addComment }) => {
     const [nombre, setNombre] = useState('');
     const [comentario, setComentario] = useState('');
@@ -31,21 +31,24 @@ export const Opinion = ({ addComment }) => {
 
     return (
         <div className='content-opinion'>
-            <h2 className='add-comment'>Agregar Comentario</h2>
+
             {enviado ? (
                 <div className='container-opinion'>
-                    <p>¡Comentario enviado correctamente!</p>
-                    <Link to="/">Ir al Home</Link>
+                    <p className='add-comment'>¡Gracias!</p>
+                    <p className='add-comment'>Hemos recibido tus comentarios. ¡Tu opinión es muy importante para nosotros!</p>
+                    <Link to={'/'}><button className='button-home'>IR AL INICIO</button> </Link>
                 </div>
             ) : (
-                <form className='form-container' onSubmit={handleSubmit}>
-                    <label className='label-op'>MENSAJE</label>
+                <>
+                    <h2 className='add-comment'>Agregar Comentario</h2>
+                    <form className='form-container' onSubmit={handleSubmit}>
+                        <label className='label-op'>NOMBRE</label>
                         <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
-                    <label className='label-op'>MENSAJE</label>
+                        <label className='label-op'>MENSAJE</label>
                         <textarea value={comentario} onChange={(e) => setComentario(e.target.value)} required />
 
-                    <label className='label-exp'>
-                        ¿CÓMO FUE TU EXPERIENCIA CON NOSOTROS?</label>
+                        <label className='label-exp'>
+                            ¿CÓMO FUE TU EXPERIENCIA CON NOSOTROS?</label>
                         <div className="star-rating">
                             {[1, 2, 3, 4, 5].map((index) => (
                                 <span
@@ -53,13 +56,14 @@ export const Opinion = ({ addComment }) => {
                                     className={`star ${index <= valoracion ? 'filled' : ''}`}
                                     onClick={() => handleStarClick(index)}
                                 >
-                  ★
-                </span>
+                                    ★
+                                </span>
                             ))}
                         </div>
 
-                    <button className='button-home' type="submit">MENÚ</button>
-                </form>
+                        <button className='button-opinion' type="submit">ENVIAR</button>
+                    </form>
+                </>
             )}
         </div>
 

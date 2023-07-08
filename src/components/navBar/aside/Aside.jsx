@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import instagram from '../../../assets/icons/instagram.png'
 
 export const Aside = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const asideRef = useRef(null);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -12,6 +13,20 @@ export const Aside = () => {
   const handleItemClick = () => {
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (asideRef.current && !asideRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
   const links = [
     {
       id: 1,
@@ -45,7 +60,7 @@ export const Aside = () => {
     },
   ];
   return (
-    <aside className={`navbar ${isOpen ? 'open' : ''}`}>
+    <aside ref={asideRef} className={`navbar ${isOpen ? 'open' : ''}`}>
       <input
         type="checkbox"
         id="checkbox"

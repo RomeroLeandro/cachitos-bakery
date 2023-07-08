@@ -1,7 +1,8 @@
 .nav-community{
   display: flex;
   flex-direction: column;
-  margin: 25px 10px;
+  margin: 25px 0px;
+  width: auto;
 }
 .container-buttons-community{
   display: flex;
@@ -9,11 +10,9 @@
   justify-content: center;
   gap: 50px;
   transition: border-bottom 0.3s;
+  flex-wrap: wrap;
 }
-.buttons-community:active,
-.buttons-community:focus{
-  border-bottom: 2px solid #000000;
-}
+
 .buttons-community{
   background: none;
   border: none;
@@ -27,4 +26,8 @@
   font-size: 26px;
   color: #A44C04;
   text-align: center;
+}
+.buttons-community.selected {
+  font-weight: bold;
+  border-bottom: 2px solid #000000;
 }
