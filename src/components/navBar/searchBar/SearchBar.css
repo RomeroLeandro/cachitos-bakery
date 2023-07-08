@@ -1,0 +1,26 @@
+.search-container {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    transition: top 0.3s ease-in-out;
+}
+
+.search-container.open {
+    top: 0;
+}
+
+.search-input-container {
+    padding: 10px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.search-submit {
+    padding: 5px 10px;
+}

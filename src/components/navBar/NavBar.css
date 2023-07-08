@@ -122,3 +122,34 @@ nav img{
   font-family: Agane;
   font-size: 16px;
 }
+/* .nav-header {
+  position: relative;
+} */
+
+.iconsNav {
+  position: relative;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-dropdown input[type="text"] {
+  flex: 1;
+  max-width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-dropdown button {
+  padding: 5px 10px;
+  margin-left: 10px;
+}

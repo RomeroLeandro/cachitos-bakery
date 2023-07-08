@@ -33,7 +33,7 @@ margin: 20px 10px;
   flex-direction: column;
   gap: 10px;
 }
-@media (min-width: 950px) {
+@media (min-width: 850px) {
   .container-about{
     flex-direction: column;
   }
