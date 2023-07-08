@@ -86,7 +86,7 @@ a{
   transform: translateY(2px);
  }
 
- button{
+ button, svg{
   cursor: pointer;
  }
 

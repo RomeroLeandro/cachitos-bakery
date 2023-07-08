@@ -13,6 +13,10 @@
   justify-content: center;
   gap: 10px;
   transition-duration: .5s;
+  
+}
+.container-toggle{
+  z-index: 999;
 }
 
 .bars {

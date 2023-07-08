@@ -5,7 +5,7 @@ import './Toggle.css'
 export const Toggle = () => {
 
   return (
-    <div>
+    <div className='container-toggle'>
       <input type="checkbox" id="checkbox" />
       <label htmlFor="checkbox" className="toggle">
         <div className="bars" id="bar1"></div>
