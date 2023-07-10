@@ -58,6 +58,11 @@ export const Aside = () => {
       link: "comunidad",
       nombre: "Comunidad"
     },
+    {
+      id: 7,
+      link: "carrito",
+      nombre:"Carrito"
+    },
   ];
   return (
     <aside ref={asideRef} className={`navbar ${isOpen ? 'open' : ''}`}>
