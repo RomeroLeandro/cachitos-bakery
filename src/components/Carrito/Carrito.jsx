@@ -1,14 +1,12 @@
 import './Carrito.css'
 import { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+// import { useParams } from 'react-router'
 import { Context } from '../../Context/Context'
 import Item from '../Item/item'
 
 // function Carrito(){
 export const Carrito = () =>{
     let { lista } = useContext(Context)
-    let { carrito } = useParams();
-    console.log(carrito)
     
     function Finish(){
         let message = `Pedido: ${lista.map((item) =>{

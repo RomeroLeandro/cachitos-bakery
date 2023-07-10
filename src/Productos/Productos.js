@@ -11,7 +11,7 @@ let Productos = [
     },
     {
         id:"id2",
-        title:"Producto2",
+        title:"ack",
         cant: 1,
         descr:"Descripcion de producto",
         price:"Precio",
@@ -19,7 +19,7 @@ let Productos = [
     },
     {
         id:"id3",
-        title:"Producto3",
+        title:"doct",
         cant: 1,
         descr:"Descripcion de producto",
         price:"Precio",
@@ -27,7 +27,7 @@ let Productos = [
     },
     {
         id:"id4",
-        title:"Producto4",
+        title:"fifa",
         cant: 1,
         descr:"Descripcion de producto",
         price:"Precio",

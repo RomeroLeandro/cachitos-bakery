@@ -26,14 +26,14 @@ export const NavBar = () => {
         // console.log(Nombres());
     },[])
     function HandleText(evt){
-        let opciones = lista.filter((item) => item.includes(evt.target.value))
-        setOptions(opciones)
+        let opciones = lista.filter(item => item.toLowerCase().includes(evt.target.value))
         if((opciones.length) > 0 && (evt.target.value !== '')){
             setShowLista(1)
         } else {
             setShowLista(0)
         }
-        console.log(opciones.length,evt.target.value)
+        setOptions(opciones)
+        console.log(opciones,evt.target.value)
     }
 
     useEffect(() => {
@@ -102,7 +102,7 @@ export const NavBar = () => {
                                 </div>
                             </div>
                         )}
-                        {showLista &&<ShowOptions name={lista}/>}
+                        {showLista &&<ShowOptions name={options}/>}
                     </div>
 
                 </div>
