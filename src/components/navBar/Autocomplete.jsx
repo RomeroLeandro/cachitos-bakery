@@ -1,4 +1,5 @@
 import Productos from "../../Productos/Productos";
+import { Link } from "react-router-dom";
 import ReactModal from "react-modal";
 
 export function Nombres(){
@@ -13,7 +14,7 @@ export function ShowOptions({name}){
     return(
         <div className="Show">
             {name.map((item) =>{
-                return(<span>{item}</span>)
+                return(<Link to={`/menu/${item}`}> <span>{item}</span> </Link>)
             })}
         </div>
     )

@@ -59,7 +59,7 @@ function App() {
           <WhatsappIcon />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/menu:/element' element={<Menu />} />
+            <Route path='/menu/:element' element={<Menu />} />
             <Route path='/novedades' element={<Find />} />
             <Route path='/comopedir' element={<HowAsk />} />
             <Route path='/sobrenosotros' element={<About />} />
