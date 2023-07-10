@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom';
 import './NavBar.css';
 import logo from '../../assets/logo/cachitos-logo.PNG'
 import { Aside } from './aside/Aside';
+import {Nombres, ShowOptions} from './Autocomplete';
 
 export const NavBar = () => {
     const [isSearchVisible, setSearchVisible] = useState(false);
+    const [options, setOptions] = useState([]);
+    const [lista, setLista] = useState([]);
+    const [showLista, setShowLista] = useState(0)
     const searchRef = useRef(null);
 
     const handleSearchIconClick = () => {
@@ -17,6 +21,20 @@ export const NavBar = () => {
             setSearchVisible(false);
         }
     };
+    useEffect(() =>{
+        setLista(Nombres());
+        // console.log(Nombres());
+    },[])
+    function HandleText(evt){
+        let opciones = lista.filter((item) => item.includes(evt.target.value))
+        setOptions(opciones)
+        if((opciones.length) > 0 && (evt.target.value !== '')){
+            setShowLista(1)
+        } else {
+            setShowLista(0)
+        }
+        console.log(opciones.length,evt.target.value)
+    }
 
     useEffect(() => {
         document.addEventListener('click', handleClickOutside);
@@ -61,7 +79,6 @@ export const NavBar = () => {
         <header>
             <Aside />
             <nav className='nav-header'>
-
                 <div className='iconsNav'>
                     <Link to={`/`}>
                         <img src={logo} alt="imagen" />
@@ -81,10 +98,11 @@ export const NavBar = () => {
                                     <button onClick={handleSearchIconClick}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" className="bi bi-search" viewBox="0 0 16 16">
                                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                                     </svg></button>
-                                    <input type="text" placeholder="Buscar productos" />
+                                    <input onChange={HandleText} type="text" placeholder="Buscar productos" />
                                 </div>
                             </div>
                         )}
+                        {showLista &&<ShowOptions name={lista}/>}
                     </div>
 
                 </div>

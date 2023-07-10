@@ -65,7 +65,7 @@ function App() {
             <Route path='/sobrenosotros' element={<About />} />
             <Route path='/contacto' element={<Contact />} />
             <Route path='/comunidad' element={<Community />} />
-            <Route path='/carrito' element={<Carrito/>} />
+            <Route path='/:carrito' element={<Carrito/>} />
           </Routes>
         </div>
 

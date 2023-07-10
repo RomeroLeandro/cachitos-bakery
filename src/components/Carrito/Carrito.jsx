@@ -1,22 +1,15 @@
-// import './Carrito.css'
+import './Carrito.css'
 import { useContext, useEffect, useState } from 'react'
+import { useParams } from 'react-router'
 import { Context } from '../../Context/Context'
 import Item from '../Item/item'
 
 // function Carrito(){
 export const Carrito = () =>{
     let { lista } = useContext(Context)
-    let [arr,setArr] = useState([])
-    // let arr = []
-    // useEffect(() => {
-    //     // console.log(lista)
-    //     // lista.map(((item,index) => {
-    //     //     return(
-    //     //         setArr([...arr,<Item key={item.id} Producto={lista[index]}/>])
-    //     //     )
-    //     // }))
-    //     // console.log("lista",arr)
-    // },[lista])
+    let { carrito } = useParams();
+    console.log(carrito)
+    
     function Finish(){
         let message = `Pedido: ${lista.map((item) =>{
             console.log("Aca")
@@ -29,13 +22,14 @@ export const Carrito = () =>{
     return(
         <div className="Carrito">
             <h2>Carrito</h2>
-            {arr}
             {lista.length > 0
                 ?<>
                     {lista.map((item,index) => {
                         return<Item key={item.id} Producto={lista[index]}/>
                     })}
-                    <button onClick={Finish}>Finalizar Pedido</button>
+                    <div className='Fin'>
+                        <button onClick={Finish}>Finalizar Pedido</button>
+                    </div>
                 </>
                 :<h1>Carrito Vacio</h1>
             }

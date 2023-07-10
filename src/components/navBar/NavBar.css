@@ -204,6 +204,17 @@ margin: 2px;
   align-items: center;
   height: 36px;
 }
+.Show{
+  position: absolute;
+  top:8rem;
+  right: 25rem;
+  border-radius: 5px;
+  background-color: #FFF;
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap:0.5rem;
+}
 
 @media (min-width: 650px) {
   .search-dropdown div{
