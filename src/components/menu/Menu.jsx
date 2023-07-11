@@ -17,7 +17,7 @@ export const Menu = () => {
       setLista(ar)
     }
     console.log(element)
-  },[])
+  },[element])
   return(
     <div className="Menu">
         <h2>Menu</h2>

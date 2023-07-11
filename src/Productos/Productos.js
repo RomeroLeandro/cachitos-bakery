@@ -27,7 +27,15 @@ let Productos = [
     },
     {
         id:"id4",
-        title:"fifa",
+        title:"lala",
+        cant: 1,
+        descr:"Descripcion de producto",
+        price:"Precio",
+        pic:Pic1
+    },
+    {
+        id:"id5",
+        title:"lala2",
         cant: 1,
         descr:"Descripcion de producto",
         price:"Precio",
