@@ -10,7 +10,7 @@ export const Menu = () => {
   const [lista, setLista] = useState([])
   const {element} = useParams()
   useEffect(() => {
-    if(element === '0'){
+    if((element === '0') || (element === undefined)){
       setLista(Productos)
     } else{
       let ar = Productos.filter(item => item.title === element)

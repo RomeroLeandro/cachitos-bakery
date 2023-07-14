@@ -14,7 +14,7 @@ import { Find } from '../find/Find';
 
 export const Home = () => {
   const images = [
-    { url: menu, title: 'Imagen menu', redirectTo: '/menu' },
+    { url: menu, title: 'Imagen menu', redirectTo: '/menu/0' },
     { url: comoPedir, title: 'Imagen como pedir', redirectTo: '/comopedir' },
     { url: promociones, title: 'Imagen promociones', redirectTo: '/novedades' },
     { url: conocenos, title: 'Imagen conocenos', redirectTo: '/sobrenosotros' }
