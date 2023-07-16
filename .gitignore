@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+#images
+/src/assets/FotosProds
 # testing
 /coverage
 
