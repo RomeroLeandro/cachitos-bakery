@@ -24,6 +24,7 @@ export const Menu = () => {
     }
     console.log(element)
   },[element])
+
   return(
     <div className="Menu">
         <h2>Menu</h2>

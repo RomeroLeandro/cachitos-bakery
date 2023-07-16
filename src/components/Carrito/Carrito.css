@@ -24,3 +24,7 @@
     border: none;
     color: #fff;
 }
+.Carrito h2{
+    width: 100%;
+    height: fit-content;
+}

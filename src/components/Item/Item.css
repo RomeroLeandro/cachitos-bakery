@@ -1,17 +1,14 @@
 .Item{
     width: 70%;
-    /* border: 1px solid red; */
-    height: fit-content;
+    border: 1px solid red;
+    height: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 .Item img{
     width: 100%;
-}
-.Item *{
-    /* border: 1px solid rebeccapurple; */
 }
 @media screen and (min-width: 400px) {
     .Item{
