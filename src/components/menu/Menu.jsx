@@ -1,14 +1,20 @@
 import React from 'react';
-import Productos from '../../Productos/Productos';
+// import Productos from '../../Productos/Productos';
 import Item from '../Item/item';
 import { useParams } from 'react-router';
 import './Menu.css';
 import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { Context } from '../../Context/Context';
 
 
 export const Menu = () => {
   const [lista, setLista] = useState([])
+  const {Productos} = useContext(Context)
+  // const [Productos,setProductos] = useState([])
   const {element} = useParams()
+  // Importar productos
+
   useEffect(() => {
     if((element === '0') || (element === undefined)){
       setLista(Productos)

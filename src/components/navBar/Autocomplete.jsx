@@ -1,10 +1,10 @@
-import Productos from "../../Productos/Productos";
+import { Prods } from "../../Context/Context";
 import { Link } from "react-router-dom";
 import ReactModal from "react-modal";
 
 export function Nombres(){
     let arr = []
-    Productos.map((item)=>{
+    Prods.map((item)=>{
         arr.push(item.title);
     })
     return arr;

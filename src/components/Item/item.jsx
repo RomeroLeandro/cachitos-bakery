@@ -7,7 +7,7 @@ import './Item.css'
 
 function Item({Producto}){
 // export const Item = (Producto) =>{
-    let {AddList} = useContext(Context)
+    let { AddList } = useContext(Context)
     let { carrito } = useParams();
     // console.log(carrito)
     function AddItem(cant){
