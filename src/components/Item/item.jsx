@@ -20,6 +20,7 @@ function Item({Producto}){
             <div className='info'>
                 <p>{Producto.title}</p>
                 <p>{Producto.descr}</p>
+                <hr/>
                 <p>${Producto.price}</p>
                 {carrito !== "carrito" && <Add add = {AddItem} cantidad = {Producto.cant}/>}
             </div>                

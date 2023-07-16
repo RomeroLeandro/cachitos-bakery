@@ -10,9 +10,9 @@ function Add({add,cantidad = 1}){
     // let { AddList,SubList } = useContext(Context)
     let { section } = useParams();
     let maxCant = 3;
-    useEffect(() => {
-        console.log(cant)
-    },[cant])
+    // useEffect(() => {
+    //     // console.log(cant)
+    // },[cant])
     function Inc(){
         if(cant < maxCant)
             setCant(cant+1);

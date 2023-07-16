@@ -7,6 +7,8 @@ export let Prods = []
 export function ContextProvider({children}){
     const [lista,setLista] = useState([])
     const [sideBar, setSideBar] = useState(0);
+    const [cant,setCant] = useState(0);
+    const [total, setTotal] = useState(0);
     const [Productos,setProductos] = useState([])
     const db = getFirestore();
     const itemColletion = collection(db,"Menu");
@@ -16,7 +18,7 @@ export function ContextProvider({children}){
     getDocs(itemColletion).then((snapshot) => {
       if(snapshot.size > 0){
         snapshot.docs.map((doc) => {
-            console.log(doc.data())
+            // console.log(doc.data())
             arr.push({id:doc.id,...doc.data()})
         })  
     }
@@ -30,17 +32,22 @@ export function ContextProvider({children}){
         setSideBar(1-sideBar);
     }
 
+    function CantCart(cantidad,precio){
+        setCant(cant + +cantidad);
+        setTotal(total + +precio)
+        console.log(cant,total)
+    }
+
     function AddList(item){
         let index = lista.findIndex(prod => prod.id === item.id);
         if(index !== -1){
-            console.log("esta en lista")
             let arr = lista;
-            arr[index].cant = arr[index.cant] + item.cant;
+            arr[index].cant = arr[index].cant + +item.cant;
             setLista(arr)
         } else {
-            console.log("no esta en lista")
             setLista([...lista,item]);
         }
+        CantCart(item.cant,item.price);
     }
 
     function SubList(item){
@@ -67,7 +74,9 @@ export function ContextProvider({children}){
             AddList:AddList,
             SubList:SubList,
             Clean:Clean,
-            Productos,Productos
+            Productos,Prods,
+            cant:cant,
+            total:total
         }}>
             {children}
         </Context.Provider>

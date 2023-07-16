@@ -13,6 +13,14 @@
 .Item .info{
     /* align-items: center; */
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* gap:10px; */
+}
+.Item .info hr{
+    width: 70%;
+    margin:10px;
+    align-self: center;
 }
 @media screen and (min-width: 400px) {
     .Item{

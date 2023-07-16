@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from 'react'
 // import { useParams } from 'react-router'
 import { Context } from '../../Context/Context'
 import Item from '../Item/item'
+import Add from '../Add/Add'
 
 // function Carrito(){
 export const Carrito = () =>{
@@ -23,7 +24,12 @@ export const Carrito = () =>{
             {lista.length > 0
                 ?<>
                     {lista.map((item,index) => {
-                        return<Item key={item.id} Producto={lista[index]}/>
+                        return(
+                            <>
+                                <Item key={item.id} Producto={lista[index]}/>
+                                <Add cantidad={item.cant}/>
+                            </>
+                        )
                     })}
                     <div className='Fin'>
                         <button onClick={Finish}>Finalizar Pedido</button>

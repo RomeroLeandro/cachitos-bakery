@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
+import { Context } from '../../Context/Context';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import logo from '../../assets/logo/cachitos-logo.PNG'
@@ -11,6 +12,7 @@ export const NavBar = () => {
     const [lista, setLista] = useState([]);
     const [showLista, setShowLista] = useState(0)
     const searchRef = useRef(null);
+    const { cant } = useContext(Context)
 
     const handleSearchIconClick = () => {
         setSearchVisible(!isSearchVisible);
@@ -102,7 +104,8 @@ export const NavBar = () => {
                                 </div>
                             </div>
                         )}
-                        {showLista &&<ShowOptions name={options}/>}
+                        <p>{cant}</p>
+                        {/* {showLista &&<ShowOptions name={options}/>} */}
                     </div>
 
                 </div>
