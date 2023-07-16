@@ -1,7 +1,7 @@
 .Item{
     width: 70%;
-    border: 1px solid red;
-    height: 500px;
+    /* border: 1px solid red; */
+    height: 550px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -9,6 +9,10 @@
 }
 .Item img{
     width: 100%;
+}
+.Item .info{
+    /* align-items: center; */
+    text-align: center;
 }
 @media screen and (min-width: 400px) {
     .Item{

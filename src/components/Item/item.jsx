@@ -17,9 +17,12 @@ function Item({Producto}){
     return(
         <div className='Item'>
             {Producto.pic&&<img src={Producto.pic} alt='Img'/>}
-            <p>{Producto.title}</p>
-            <p>{Producto.descr}</p>
-            {carrito !== "carrito" && <Add add = {AddItem} cantidad = {Producto.cant}/>}
+            <div className='info'>
+                <p>{Producto.title}</p>
+                <p>{Producto.descr}</p>
+                <p>${Producto.price}</p>
+                {carrito !== "carrito" && <Add add = {AddItem} cantidad = {Producto.cant}/>}
+            </div>                
         </div>
     )
 }
