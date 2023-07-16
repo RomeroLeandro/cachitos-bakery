@@ -31,19 +31,16 @@ export function ContextProvider({children}){
     }
 
     function AddList(item){
-        let list = lista;
-        console.log(list);
-        for (let i = 0; i< lista.length;i++){
-            if(lista[i].title === item.title){
-                list[i].cant += item.cant;
-                console.log("Agregado")
-                setLista(list)
-                console.log(lista)
-                return
-            }
+        let index = lista.findIndex(prod => prod.id === item.id);
+        if(index !== -1){
+            console.log("esta en lista")
+            let arr = lista;
+            arr[index].cant = arr[index.cant] + item.cant;
+            setLista(arr)
+        } else {
+            console.log("no esta en lista")
+            setLista([...lista,item]);
         }
-        setLista([...list,item])
-        console.log(lista,"contexto")
     }
 
     function SubList(item){
