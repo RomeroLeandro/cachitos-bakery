@@ -39,22 +39,20 @@ export function ContextProvider({children}){
     }
 
     function AddList(item,cantidad){
+        console.log(item,cantidad,"addList -> context")
         let index = lista.findIndex(prod => prod.id === item.id);
-        console.log(item)
-        console.log(lista);
         if(index !== -1){
             let arr = [...lista];
-            // console.log(arr[index].hasOwnProperty('cant'))
             if(arr[index].hasOwnProperty("cant")){
                 arr[index].cant += cantidad;
             } else {
                 arr[index].cant = cantidad;
             }
-            console.log(arr[index].cant + cantidad);
             setLista([...arr])
         } else {
             setLista([...lista,item]);
         }
+        console.log(lista)
         CantCart(cantidad,cantidad*item.price);
     }
 

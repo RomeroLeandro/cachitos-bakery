@@ -7,7 +7,7 @@ import Add from '../Add/Add'
 
 // function Carrito(){
 export const Carrito = () =>{
-    let { lista } = useContext(Context)
+    let { lista,total } = useContext(Context)
     
     function Finish(){
         console.log(lista);
@@ -27,7 +27,7 @@ export const Carrito = () =>{
                         return<Item key={item.id} Producto={lista[index]}/>
                     })}
                     <div className='Fin'>
-                        <button onClick={Finish}>Finalizar Pedido</button>
+                        <button onClick={Finish}>Finalizar Pedido (${total})</button>
                     </div>
                 </>
                 :<h1>Carrito Vacio</h1>

@@ -22,8 +22,28 @@
     margin:10px;
     align-self: center;
 }
+.cartItem{
+    width: 70%;
+    /* border: 1px solid red; */
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.cartItem img{
+    width: 100px;
+}
+/* .cartItem .info{
+    
+} */
+
+
 @media screen and (min-width: 400px) {
     .Item{
+        width: 300px;
+    }
+    .cartItem{
         width: 300px;
     }
 }

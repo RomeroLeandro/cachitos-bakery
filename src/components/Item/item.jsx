@@ -14,15 +14,17 @@ function Item({Producto}){
         // Producto.cant = cant;
         AddList(Producto,+cant);
     }
+    // console.log(Producto.cant)
     return(
-        <div className='Item'>
+        <div className= {carrito !== "carrito"? 'Item' : "cartItem"}>
             {Producto.pic&&<img src={Producto.pic} alt='Img'/>}
             <div className='info'>
-                <p>{Producto.title}</p>
-                <p>{Producto.descr}</p>
+                <p>{Producto.name}</p>
+                {carrito === "carrito" && <p>Cantidad: {Producto.cant}</p>}
+                {carrito !== "carrito" && <p>{Producto.descr}</p>}
                 <hr/>
-                <p>${Producto.price}</p>
-                {carrito !== "carrito" && <Add add = {AddItem} cantidad = {Producto.cant}/>}
+                {carrito !== "carrito" && <p>${Producto.price}</p>}
+                {carrito !== "carrito" && <Add add = {AddItem} cantidad = {1}/>}
             </div>                
         </div>
     )
