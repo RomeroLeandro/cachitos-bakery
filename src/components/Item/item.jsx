@@ -11,8 +11,8 @@ function Item({Producto}){
     let { carrito } = useParams();
     // console.log(carrito)
     function AddItem(cant){
-        Producto.cant = cant;
-        AddList(Producto);
+        // Producto.cant = cant;
+        AddList(Producto,+cant);
     }
     return(
         <div className='Item'>

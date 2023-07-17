@@ -38,16 +38,24 @@ export function ContextProvider({children}){
         console.log(cant,total)
     }
 
-    function AddList(item){
+    function AddList(item,cantidad){
         let index = lista.findIndex(prod => prod.id === item.id);
+        console.log(item)
+        console.log(lista);
         if(index !== -1){
-            let arr = lista;
-            arr[index].cant = arr[index].cant + +item.cant;
-            setLista(arr)
+            let arr = [...lista];
+            // console.log(arr[index].hasOwnProperty('cant'))
+            if(arr[index].hasOwnProperty("cant")){
+                arr[index].cant += cantidad;
+            } else {
+                arr[index].cant = cantidad;
+            }
+            console.log(arr[index].cant + cantidad);
+            setLista([...arr])
         } else {
             setLista([...lista,item]);
         }
-        CantCart(item.cant,item.price);
+        CantCart(cantidad,cantidad*item.price);
     }
 
     function SubList(item){

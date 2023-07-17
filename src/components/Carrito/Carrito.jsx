@@ -24,12 +24,7 @@ export const Carrito = () =>{
             {lista.length > 0
                 ?<>
                     {lista.map((item,index) => {
-                        return(
-                            <>
-                                <Item key={item.id} Producto={lista[index]}/>
-                                <Add cantidad={item.cant}/>
-                            </>
-                        )
+                        return<Item key={item.id} Producto={lista[index]}/>
                     })}
                     <div className='Fin'>
                         <button onClick={Finish}>Finalizar Pedido</button>
