@@ -76,7 +76,10 @@ export function ContextProvider({children}){
         }
     }
     function Clean(){
-        setLista([])
+        setLista([]);
+        setCant(0);
+        setTotal(0);
+        console.log("limpiado")
     }
 
     return(

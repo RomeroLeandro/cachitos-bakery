@@ -7,8 +7,16 @@ import Add from '../Add/Add'
 
 // function Carrito(){
 export const Carrito = () =>{
-    let { lista,total } = useContext(Context)
+    let { lista,total,Clean } = useContext(Context)
     
+    function HandleClear(){
+        let ans = window.confirm("Borrar carrito")
+        if(ans){
+            Clean();
+        }
+        // alert("esta a punto de borrar el carrito")
+    }
+
     function Finish(){
         // console.log(lista);
         let message = `Pedido:\%0D%0A${lista.map((item) =>{
@@ -28,6 +36,7 @@ export const Carrito = () =>{
                     })}
                     <div className='Fin'>
                         <button onClick={Finish}>Finalizar Pedido (${total})</button>
+                        <button onClick={HandleClear}>Borrar carrito</button>
                     </div>
                 </>
                 :<h1>Carrito Vacio</h1>
