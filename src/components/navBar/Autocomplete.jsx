@@ -26,7 +26,7 @@ export function ShowOptions({opcion}){
     return(
         <div className="Show">
             {opcion.map((item) => {
-                return(<Link key={item.id} to={`menu/${item.name.replace(/\s+/g,'')}`} onClick={() => setShowLista(0)}><p>{item.name}</p></Link>)
+                return(<Link key={item.id} to={`menu/producto/${item.name.replace(/\s+/g,'')}`} onClick={() => setShowLista(0)}><p>{item.name}</p></Link>)
             })}
         </div>
     )

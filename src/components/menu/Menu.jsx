@@ -6,29 +6,38 @@ import './Menu.css';
 import { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import { Context } from '../../Context/Context';
+import { Categories } from '../Categories/Categories';
 
 
 export const Menu = () => {
   const [lista, setLista] = useState([])
   const {Productos} = useContext(Context)
   // const [Productos,setProductos] = useState([])
-  const {element} = useParams()
+  const {element,producto} = useParams()
   // Importar productos
 
   useEffect(() => {
-    // console.log(element,"menu, element")
-    if((element === '0') || (element === undefined)){
-      setLista(Productos)
-    } else{
-      let ar = Productos.filter(item => item.link === element)
-      setLista(ar)
+    switch(element){
+      case '0':
+        setLista(Productos);
+        break;
+      case 'producto':
+        setLista(Productos.filter(item => item.link === producto))
+        break;
+      case "category":
+        console.log(producto,"Category")
+        setLista(Productos.filter(item => item.Category === producto))
+        break;
+      default:
+        // setLista(Productos.filter(item => item.link === element))
+        break;
     }
-    // console.log(element)
-  },[element])
+  },[element,producto])
 
   return(
     <div className="Menu">
         <h2>Menu</h2>
+        <Categories/>
         {lista.map((item) => {
             return(<Item key={item.id} Producto={item}/>)
         })}

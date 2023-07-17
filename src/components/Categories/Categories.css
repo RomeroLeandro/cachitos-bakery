@@ -1,0 +1,11 @@
+.Categories{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    width: 200%;
+    overflow-x: scroll;
+}
+.Categories *{
+    text-align: center;
+    width: max-content;
+}
