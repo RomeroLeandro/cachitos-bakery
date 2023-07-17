@@ -16,14 +16,14 @@ export const Menu = () => {
   // Importar productos
 
   useEffect(() => {
-    console.log(element,"menu, element")
+    // console.log(element,"menu, element")
     if((element === '0') || (element === undefined)){
       setLista(Productos)
     } else{
       let ar = Productos.filter(item => item.link === element)
       setLista(ar)
     }
-    console.log(element)
+    // console.log(element)
   },[element])
 
   return(

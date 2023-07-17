@@ -27,7 +27,10 @@ export const NavBar = () => {
     },[Productos])
 
     function HandleText(evt){
-        console.log(lista)
+        // console.log(lista)
+        // if(evt.target.value === ''){
+        //     window.location.href = '/menu/0'
+        // }
         let opciones = lista.filter(item => item.name.toLowerCase().includes(evt.target.value))
         if((opciones.length) > 0 && (evt.target.value !== '')){
             setShowLista(1)
@@ -35,7 +38,7 @@ export const NavBar = () => {
             setShowLista(0)
         }
         setOptions([...opciones])
-        console.log(opciones,evt.target.value,typeof options)
+        // console.log(opciones,evt.target.value,typeof options)
     }
 
     useEffect(() => {

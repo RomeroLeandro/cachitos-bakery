@@ -10,12 +10,12 @@ export const Carrito = () =>{
     let { lista,total } = useContext(Context)
     
     function Finish(){
-        console.log(lista);
+        // console.log(lista);
         let message = `Pedido:\%0D%0A${lista.map((item) =>{
             let pr = `${item.cant} ${item.name}%0D%0A`
             return pr
         }).join('')}`
-        console.log(message)
+        // console.log(message)
         window.open(`https://wa.me/5492664006000?text=${message}`)
     }
     return(

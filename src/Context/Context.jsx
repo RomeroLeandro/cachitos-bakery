@@ -19,7 +19,7 @@ export function ContextProvider({children}){
     getDocs(itemColletion).then((snapshot) => {
       if(snapshot.size > 0){
         snapshot.docs.map((doc) => {
-            console.log(doc.data().name.replace(/\s+/g,''))
+            // console.log(doc.data().name.replace(/\s+/g,''))
             arr.push({id:doc.id,link:doc.data().name.replace(/\s+/g,''),...doc.data()})
         })  
     }
@@ -40,7 +40,7 @@ export function ContextProvider({children}){
     }
 
     function AddList(item,cantidad){
-        console.log(item,cantidad,"addList -> context")
+        // console.log(item,cantidad,"addList -> context")
         let index = lista.findIndex(prod => prod.id === item.id);
         setLista(prevLista =>{
             let arr = [...prevLista];
@@ -56,7 +56,7 @@ export function ContextProvider({children}){
             }
             return arr;
         })
-        console.log(lista)
+        // console.log(lista)
         CantCart(cantidad,cantidad*item.price);
     }
     // useEffect(() => {
@@ -68,9 +68,9 @@ export function ContextProvider({children}){
         for (let i = 0; i< lista.length;i++){
             if(lista[i].title === item.title){
                 list[i].cant -= item.cant;
-                console.log("Agregado")
+                // console.log("Agregado")
                 setLista(list)
-                console.log(lista)
+                // console.log(lista)
                 return
             }
         }

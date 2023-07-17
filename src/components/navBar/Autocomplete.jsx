@@ -6,7 +6,7 @@ import { type } from "@testing-library/user-event/dist/type";
 import { useEffect } from "react";
 
 export function Nombres(){
-    console.log(Prods)
+    // console.log(Prods)
     let arr = []
     Prods.map((item)=>{
         arr.push(item.title);
@@ -16,7 +16,7 @@ export function Nombres(){
 
 export function ShowOptions({opcion}){
     let {setShowLista,showLista} = useContext(Context);
-    console.log(opcion,"opcion");
+    // console.log(opcion,"opcion");
     let arr = []
     // useEffect(() => {
     //     opcion.map((item) => {
