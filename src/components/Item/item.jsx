@@ -4,6 +4,7 @@ import Add from '../Add/Add';
 // import './Item.css'
 import { Context } from '../../Context/Context';
 import './Item.css'
+import { useState } from 'react';
 
 function Item({Producto}){
 // export const Item = (Producto) =>{
@@ -11,8 +12,9 @@ function Item({Producto}){
     let { carrito } = useParams();
     // console.log(carrito)
     function AddItem(cant){
-        // Producto.cant = cant;
+        // setText("Agregado")
         AddList(Producto,+cant);
+
     }
     // console.log(Producto.cant)
     return(

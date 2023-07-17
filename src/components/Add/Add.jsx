@@ -7,15 +7,23 @@ import { useParams } from 'react-router-dom'
 
 function Add({add,cantidad = 1}){
     let [cant, setCant] = useState(cantidad)
-    // let { AddList,SubList } = useContext(Context)
+    let [text, setText] = useState("Agregar")
+    let [hab,setHab] = useState(0);
     let { section } = useParams();
     let maxCant = 3;
-    // useEffect(() => {
-    //     // console.log(cant)
-    // },[cant])
+    
+    function HandleClick(){
+        setText("Agregando");
+        setHab(1);
+        add(cant)
+        setTimeout(() =>{
+            setHab(0)
+            setText("Agregar");
+        },2000)
+    }
     function Inc(){
-        if(cant < maxCant)
-            setCant(cant+1);
+        // if(cant < maxCant)
+        setCant(cant+1);
     }
     function Dec(){
         if(cant > 1)
@@ -26,7 +34,7 @@ function Add({add,cantidad = 1}){
             <button onClick={Dec}>-</button>
             {<span>{cant}</span>}
             <button onClick={Inc}>+</button>
-            {section !== "cart" && <button onClick={() => add(cant)}>Agregar</button>}
+            {section !== "cart" && <button onClick={HandleClick} disabled={hab}>{text}</button>}
         </div>
     )
 }
