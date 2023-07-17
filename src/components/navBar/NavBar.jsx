@@ -12,7 +12,7 @@ export const NavBar = () => {
     const [lista, setLista] = useState([]);
     const [showLista, setShowLista] = useState(0)
     const searchRef = useRef(null);
-    const { cant } = useContext(Context)
+    const { cant, Productos } = useContext(Context)
 
     const handleSearchIconClick = () => {
         setSearchVisible(!isSearchVisible);
@@ -24,18 +24,19 @@ export const NavBar = () => {
         }
     };
     useEffect(() =>{
-        setLista(Nombres());
-        // console.log(Nombres());
-    },[])
+        setLista(Productos);
+    },[Productos])
+
     function HandleText(evt){
-        let opciones = lista.filter(item => item.toLowerCase().includes(evt.target.value))
+        console.log(lista)
+        let opciones = lista.filter(item => item.name.toLowerCase().includes(evt.target.value))
         if((opciones.length) > 0 && (evt.target.value !== '')){
             setShowLista(1)
         } else {
             setShowLista(0)
         }
-        setOptions(opciones)
-        console.log(opciones,evt.target.value)
+        setOptions([...opciones])
+        console.log(opciones,evt.target.value,typeof options)
     }
 
     useEffect(() => {
@@ -105,7 +106,7 @@ export const NavBar = () => {
                             </div>
                         )}
                         <p>{cant}</p>
-                        {/* {showLista &&<ShowOptions name={options}/>} */}
+                        {showLista && <ShowOptions opcion={options}/>}
                     </div>
 
                 </div>

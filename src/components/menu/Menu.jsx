@@ -19,7 +19,7 @@ export const Menu = () => {
     if((element === '0') || (element === undefined)){
       setLista(Productos)
     } else{
-      let ar = Productos.filter(item => item.title === element)
+      let ar = Productos.filter(item => item.link === element)
       setLista(ar)
     }
     console.log(element)

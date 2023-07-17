@@ -18,13 +18,13 @@ export function ContextProvider({children}){
     getDocs(itemColletion).then((snapshot) => {
       if(snapshot.size > 0){
         snapshot.docs.map((doc) => {
-            // console.log(doc.data())
-            arr.push({id:doc.id,...doc.data()})
+            console.log(doc.data().name.replace(/\s+/g,''))
+            arr.push({id:doc.id,link:doc.data().name.replace(/\s+/g,''),...doc.data()})
         })  
     }
     }).then(() => {
         setProductos(arr)
-        Prods = Productos;
+        Prods = [...Productos];
     })
     },[])
     
@@ -41,20 +41,26 @@ export function ContextProvider({children}){
     function AddList(item,cantidad){
         console.log(item,cantidad,"addList -> context")
         let index = lista.findIndex(prod => prod.id === item.id);
-        if(index !== -1){
-            let arr = [...lista];
-            if(arr[index].hasOwnProperty("cant")){
-                arr[index].cant += cantidad;
-            } else {
-                arr[index].cant = cantidad;
+        setLista(prevLista =>{
+            let arr = [...prevLista];
+            if(index !== -1){
+                if(arr[index].hasOwnProperty("cant")){
+                    arr[index].cant += cantidad;
+                } else{
+                    arr[index].cant = cantidad;
+                }
+            } else{
+                item.cant = cantidad;
+                arr.push(item);
             }
-            setLista([...arr])
-        } else {
-            setLista([...lista,item]);
-        }
+            return arr;
+        })
         console.log(lista)
         CantCart(cantidad,cantidad*item.price);
     }
+    // useEffect(() => {
+    //     console.log(lista);
+    // },[lista])
 
     function SubList(item){
         let list = lista;
@@ -80,7 +86,7 @@ export function ContextProvider({children}){
             AddList:AddList,
             SubList:SubList,
             Clean:Clean,
-            Productos,Prods,
+            Productos,Productos,
             cant:cant,
             total:total
         }}>
