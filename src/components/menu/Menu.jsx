@@ -16,6 +16,7 @@ export const Menu = () => {
   // Importar productos
 
   useEffect(() => {
+    console.log(element,"menu, element")
     if((element === '0') || (element === undefined)){
       setLista(Productos)
     } else{

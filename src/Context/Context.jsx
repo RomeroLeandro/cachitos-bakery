@@ -10,6 +10,7 @@ export function ContextProvider({children}){
     const [cant,setCant] = useState(0);
     const [total, setTotal] = useState(0);
     const [Productos,setProductos] = useState([])
+    const [showLista, setShowLista] = useState(0)
     const db = getFirestore();
     const itemColletion = collection(db,"Menu");
     
@@ -88,6 +89,8 @@ export function ContextProvider({children}){
             Clean:Clean,
             Productos,Productos,
             cant:cant,
+            showLista:showLista,
+            setShowLista,setShowLista,
             total:total
         }}>
             {children}

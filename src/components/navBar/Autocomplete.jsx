@@ -1,4 +1,5 @@
-import { Prods } from "../../Context/Context";
+import { Prods,Context } from "../../Context/Context";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import ReactModal from "react-modal";
 import { type } from "@testing-library/user-event/dist/type";
@@ -14,17 +15,18 @@ export function Nombres(){
 }
 
 export function ShowOptions({opcion}){
+    let {setShowLista,showLista} = useContext(Context);
     console.log(opcion,"opcion");
     let arr = []
-    useEffect(() => {
-        opcion.map((item) => {
-            arr.push(<Link to={item.name}><p>{item.name}</p></Link>)
-        })
-    },[opcion])
+    // useEffect(() => {
+    //     opcion.map((item) => {
+    //         arr.push(<Link to={item.name}><p>{item.name}</p></Link>)
+    //     })
+    // },[opcion])
     return(
         <div className="Show">
             {opcion.map((item) => {
-                return(<Link to={item.name}><p>{item.name}</p></Link>)
+                return(<Link to={`menu/${item.name.replace(/\s+/g,'')}`} onClick={() => setShowLista(0)}><p>{item.name}</p></Link>)
             })}
         </div>
     )

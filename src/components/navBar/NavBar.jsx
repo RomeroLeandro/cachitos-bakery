@@ -10,9 +10,8 @@ export const NavBar = () => {
     const [isSearchVisible, setSearchVisible] = useState(false);
     const [options, setOptions] = useState([]);
     const [lista, setLista] = useState([]);
-    const [showLista, setShowLista] = useState(0)
     const searchRef = useRef(null);
-    const { cant, Productos } = useContext(Context)
+    const { cant, Productos,setShowLista,showLista } = useContext(Context)
 
     const handleSearchIconClick = () => {
         setSearchVisible(!isSearchVisible);
