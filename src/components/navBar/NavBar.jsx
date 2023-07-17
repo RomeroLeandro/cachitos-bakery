@@ -8,7 +8,7 @@ import { Aside } from './aside/Aside';
 import {Nombres, ShowOptions} from './Autocomplete';
 
 export const NavBar = () => {
-    let {element} = useParams();
+    let {element, producto} = useParams();
     const [isSearchVisible, setSearchVisible] = useState(false);
     const [options, setOptions] = useState([]);
     const [lista, setLista] = useState([]);
@@ -34,17 +34,13 @@ export const NavBar = () => {
         if(element === '0'){
             textRef.current.value = ""
         }
-    },[element])
+    },[element,producto])
 
     useEffect(() =>{
         setLista(Productos);
     },[Productos])
 
     function HandleText(evt){
-        // console.log(lista)
-        if(evt.target.value === ''){
-            window.location.href = '/menu/0'
-        }
         let opciones = lista.filter(item => item.name.toLowerCase().includes(evt.target.value))
         if((opciones.length) > 0 && (evt.target.value !== '')){
             setShowLista(1)
@@ -52,7 +48,7 @@ export const NavBar = () => {
             setShowLista(0)
         }
         setOptions([...opciones])
-        // console.log(opciones,evt.target.value,typeof options)
+        console.log(opciones)
     }
 
     useEffect(() => {
@@ -122,7 +118,7 @@ export const NavBar = () => {
                             </div>
                         )}
                         <p>{cant}</p>
-                        {showLista && <ShowOptions opcion={options}/>}
+                        {showLista ? <ShowOptions opcion={options}/> : <></>}
                     </div>
 
                 </div>
