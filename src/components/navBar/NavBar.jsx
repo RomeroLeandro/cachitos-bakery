@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
+import { useParams } from 'react-router-dom';
 import { Context } from '../../Context/Context';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
@@ -7,30 +8,43 @@ import { Aside } from './aside/Aside';
 import {Nombres, ShowOptions} from './Autocomplete';
 
 export const NavBar = () => {
+    let {element} = useParams();
     const [isSearchVisible, setSearchVisible] = useState(false);
     const [options, setOptions] = useState([]);
     const [lista, setLista] = useState([]);
     const searchRef = useRef(null);
+    let textRef = useRef(null);
     const { cant, Productos,setShowLista,showLista } = useContext(Context)
 
     const handleSearchIconClick = () => {
         setSearchVisible(!isSearchVisible);
     };
 
+    function HandleClick(event){
+        if(textRef.current && !textRef.current.contains(event.target)){
+            console.log("click")
+        }
+    }
     const handleClickOutside = (event) => {
         if (searchRef.current && !searchRef.current.contains(event.target)) {
             setSearchVisible(false);
         }
     };
     useEffect(() =>{
+        if(element === '0'){
+            textRef.current.value = ""
+        }
+    },[element])
+
+    useEffect(() =>{
         setLista(Productos);
     },[Productos])
 
     function HandleText(evt){
         // console.log(lista)
-        // if(evt.target.value === ''){
-        //     window.location.href = '/menu/0'
-        // }
+        if(evt.target.value === ''){
+            window.location.href = '/menu/0'
+        }
         let opciones = lista.filter(item => item.name.toLowerCase().includes(evt.target.value))
         if((opciones.length) > 0 && (evt.target.value !== '')){
             setShowLista(1)
@@ -103,7 +117,7 @@ export const NavBar = () => {
                                     <button onClick={handleSearchIconClick}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" className="bi bi-search" viewBox="0 0 16 16">
                                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                                     </svg></button>
-                                    <input onChange={HandleText} type="text" placeholder="Buscar productos" />
+                                    <input ref={textRef} onChange={HandleText} type="text" placeholder="Buscar productos" />
                                 </div>
                             </div>
                         )}
