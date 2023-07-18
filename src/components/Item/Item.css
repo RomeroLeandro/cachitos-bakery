@@ -38,6 +38,25 @@
     
 } */
 
+.MyModal{
+    top:0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(0,0,0,0.7);
+    border:2px solid red;
+    z-index: 10000;
+}
+.MyModal *{
+    color: #FFFFFF;
+}
+.MyModal img{
+    width: 200px;
+}
 
 @media screen and (min-width: 400px) {
     .Item{
