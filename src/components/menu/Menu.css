@@ -1,3 +1,6 @@
+.MenuCont{
+  overflow: hidden;
+}
 .Menu{
   width: 100%;
   height: fit-content;
@@ -7,9 +10,18 @@
   /* align-items: flex-start; */
   flex-wrap: wrap;
   gap:1rem;
+  overflow-y: auto;
 }
 .Menu h2{
   width: 100%;
   height: fit-content;
   /* border: 1px solid red; */
+}
+
+@media screen and (max-width: 400px) {
+  .Menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }

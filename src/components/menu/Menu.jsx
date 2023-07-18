@@ -35,13 +35,14 @@ export const Menu = () => {
   },[element,producto])
 
   return(
-    <div className="Menu">
-        <h2>Menu</h2>
-        <Categories/>
-        {lista.map((item) => {
+    <div className="MenuCont">
+      <div className='Menu'>
+          <h2>Menu</h2>
+          <Categories/>
+          {lista.map((item) => {
             return(<Item key={item.id} Producto={item}/>)
-        })}
-        {/* <Item Producto = {Productos[0]}/> */}
+          })}
+        </div>
     </div>
   )
 }
