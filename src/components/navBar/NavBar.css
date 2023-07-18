@@ -24,11 +24,12 @@ aside {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 60px;
+  width: 5px;
   background-color: transparent;
   transition: width 0.3s ease-in-out;
   height: calc(100vh - 60px);
   padding: 10px;
+  z-index: 2;
 }
 
 .navbar.open {
