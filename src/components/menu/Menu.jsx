@@ -133,10 +133,10 @@ export const Menu = () => {
               {ShowAdd
                 ?<>
                 <p>¿Deseas agregar adicionales?</p>
-                {productosPorCategoria["adicionales"].map((item) => {
+                {productosPorCategoria["adicionales"].map((item,key) => {
                   return(
                     <>
-                    <div className='adicional'>
+                    <div key = {key} className='adicional'>
                     <p>{item.nombre}</p>
                     <div>
                     <p>$ {item.precio}</p>

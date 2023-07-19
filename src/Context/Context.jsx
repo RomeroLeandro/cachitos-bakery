@@ -16,12 +16,13 @@ export function ContextProvider({children}){
     function CantCart(cantidad,precio){
         setCant(cant + +cantidad);
         setTotal(total + +precio)
-        console.log(cant,total)
+        // console.log(cant,total)
     }
 
     const AddList = (item,cantidad) =>{
         console.log(item,cantidad,"addList -> context")
-        let index = lista.findIndex(prod => prod.id === item.id);
+        let index = lista.findIndex(prod => prod.nombre === item.nombre);
+        console.log(index,"indice")
         setLista(prevLista =>{
             let arr = [...prevLista];
             if(index !== -1){
@@ -31,12 +32,13 @@ export function ContextProvider({children}){
                     arr[index].cant = cantidad;
                 }
             } else{
+                console.log("aca")
                 item.cant = cantidad;
                 arr.push(item);
             }
             return arr;
         })
-        console.log(lista,"Lista")
+        // console.log(lista,"Lista")
         CantCart(cantidad,cantidad*item.precio);
     }
     // useEffect(() => {
@@ -68,6 +70,7 @@ export function ContextProvider({children}){
             AddList:AddList,
             cant:cant,
             total:total,
+            Clean:Clean,
         }}>
             {children}
         </Context.Provider>

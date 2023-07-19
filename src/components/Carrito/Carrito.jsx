@@ -39,7 +39,7 @@ export const Carrito = () =>{
                 ?<>
                     {lista.map((item,index) => {
                         console.log(productos[index])
-                        return<Item key={item.id} Producto={productos[index]}/>
+                        return<Item key={item.id} Producto={lista[index]}/>
                     })}
                     <div className='Fin'>
                         <button onClick={Finish}>Finalizar Pedido (${total})</button>
