@@ -10,6 +10,14 @@ justify-content: center;
   align-items: center;
   margin: 20px;
   width: 100%;
+  border-radius: 15px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 0.5rem;
+  gap:0.5rem; /* separacion entre imagen y texto */
+}
+/* aca la descripcion en una letra mas clara*/
+.detalle{
+  color: #606060;
 }
 
 .card-product img{
@@ -49,7 +57,7 @@ width: 100%;
   
   display: flex;
   flex-direction: column;
-width: 100%;
+  width: 100%;
 }
 .container-menu h2{
   text-align: left;
@@ -60,6 +68,10 @@ width: 100%;
   justify-content: center;
   margin: 10px;
 }
+.container-full hr{
+  width: 80%;
+  align-self: center;
+}
 
 .container-slick{
   position: fixed;
@@ -67,4 +79,105 @@ width: 100%;
   width: 100%; 
   height: 50px;
   border-color: red;
+}
+
+.MyModal{
+  top:0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:rgba(0,0,0,0.7);
+  /* border:2px solid red; */
+  z-index: 10000;
+}
+.MyModal *{
+  /* color: #FFFFFF; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.MyModal .modal-center{
+  background-color: #FFFFFF;
+  width: 90%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  border:none;
+  height: fit-content;
+  padding-bottom: 0.5rem;
+}
+.MyModal .text-container{
+  padding:0.5rem;
+}
+.MyModal img{
+  width: 100%;
+  border-radius: 15px;
+}
+.MyModal .CloseModal{
+  position: absolute;
+  top:calc(50% - 200px);
+  right: calc(50% - 150px);
+  background-color: #EC9139;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+}
+.MyModal .buttons{
+  display:flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  width: 80%;
+  justify-content: center;
+}
+.MyModal button:not(.add){
+  display: flex;
+  width: fit-content;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #EC9139;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  color: #fff;
+  padding:0.5rem;
+}
+.MyModal .add{
+  border: none;
+  padding: 0.5rem;
+  background-color: #FFFFFF;
+  color: #606060;
+  font-weight: 900;
+  font-size: 20px;
+}
+.MyModal .adicionales{
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid blue; */
+  width: 80%;
+  align-items: flex-start;
+  gap:0.25rem;
+}
+/* .MyModal .adicionales p{
+  ;
+} */
+.adicional{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #606060;
+}
+.adicional div{
+  display:  flex;
+  flex-direction: row;
+  gap: 	0.5rem;
+}
+.check{
+  background-color: #EC9139;
 }

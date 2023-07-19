@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Modal from 'react-modal';
 import './ModalProduct.css';
 
-export const ModalProduct = () => {
+export const ModalProduct = ({Producto,open}) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -13,6 +13,10 @@ export const ModalProduct = () => {
     const closeModal = () => {
         setIsOpen(false);
     };
+    useEffect(() => {
+        setIsOpen(open)
+        console.log("Hola")
+    },[])
     return (
         <div className='modalProduct'>
             {/* <button onClick={openModal}>Abrir modal</button> */}
@@ -24,7 +28,7 @@ export const ModalProduct = () => {
                 <button>WhatsApp</button>
             </button>
             <Modal
-                isOpen={isOpen}
+                isOpen={false}
                 onRequestClose={closeModal}
                 contentLabel="Ejemplo de modal"
                 className="centered-modal"
