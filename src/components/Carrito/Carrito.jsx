@@ -7,10 +7,16 @@ import { Item } from '../Item/item'
 
 // function Carrito(){
 export const Carrito = () =>{
-    let { lista,total,Clean } = useContext(Context)
+    let { lista,Clean } = useContext(Context)
     let [productos, setProductos] = useState([])
+    let [total, setTotal] = useState(0);
 
     useEffect(() => {
+        let tot = 0;
+        lista.map((item) =>{
+            tot += item.cant * item.precio 
+        })
+        setTotal(tot)
         setProductos(lista)
         // console.log(productos[0])
     },[lista])

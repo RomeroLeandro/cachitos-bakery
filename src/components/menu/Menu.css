@@ -113,6 +113,12 @@ width: 100%;
 .MyModal .text-container{
   padding:0.5rem;
 }
+.MyModal .text-container h2{
+  color: black;
+}
+.MyModal .text-container p{
+  color: #606060;
+}
 .MyModal img{
   width: 100%;
   border-radius: 15px;
@@ -178,6 +184,9 @@ width: 100%;
   display:  flex;
   flex-direction: row;
   gap: 	0.5rem;
+}
+.adicional p{
+  color: #606060;
 }
 .check{
   background-color: #EC9139;

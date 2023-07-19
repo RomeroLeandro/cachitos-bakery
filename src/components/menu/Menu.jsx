@@ -16,6 +16,7 @@ export const Menu = () => {
   const [showModal, setShowModal] = useState(false);
   const [productoModal, setProductoModal] = useState({});//Producto que se muestra en el modal
   const [ShowAdd, setShowAdd] = useState(false);
+  const [check,setCheck] = useState([0,0])
   const {AddList, lista} = useContext(Context);
   useEffect(() => {
     const obtenerProductosMenu = async () => {
@@ -32,6 +33,7 @@ export const Menu = () => {
     obtenerProductosMenu();
   }, []);
 
+  
   const productosPorCategoria = {};
   productos.forEach((producto) => {
     const categoria = producto.categoria;
@@ -69,8 +71,30 @@ export const Menu = () => {
     setShowModal(1 - showModal)
     setProductoModal(item)
   }
-  const Agregar = () =>{
-    console.log(productoModal);
+  function Agregar(key){
+    // console.log(key)
+    setCheck(() =>{
+      let chk = [...check]
+      chk[key] = 1- chk[key]
+      return (chk)
+    })
+    console.log(check)
+  }
+
+  const AddtoCart = (item) =>{
+    let arr = [item]
+    // AddList(item,1)
+    check.map((chk,key) =>{
+      if(chk){
+        arr.push(productosPorCategoria['adicionales'][key])
+        // AddList(productosPorCategoria['adicionales'][key],1)
+      }
+    })
+    arr.map((item) =>{
+      setTimeout(() =>{
+        AddList(item,1)
+      },2000)
+    })
   }
 
   return (
@@ -100,7 +124,6 @@ export const Menu = () => {
                   <p>$ {producto.precio}.00</p>
                 </div>
               </div>
-              {/* <hr className='separacion'/> */}
               </>
             ))}
           </div>
@@ -126,7 +149,7 @@ export const Menu = () => {
             </div>
             <div className='buttons'>
               <button>PEDIR</button>
-              <button onClick={() => AddList(productoModal,1)}>AGREGAR AL CARRITO</button>
+              <button onClick={() => AddtoCart(productoModal)}>AGREGAR AL CARRITO</button>
               <button onClick={() => {setShowAdd(1- ShowAdd)}} className='add'>{ShowAdd ? "^" : "v"}</button>
             </div>
             <div className='adicionales'>
@@ -134,14 +157,15 @@ export const Menu = () => {
                 ?<>
                 <p>¿Deseas agregar adicionales?</p>
                 {productosPorCategoria["adicionales"].map((item,key) => {
+                  console.log(key,"key")
                   return(
                     <>
                     <div key = {key} className='adicional'>
-                    <p>{item.nombre}</p>
-                    <div>
-                    <p>$ {item.precio}</p>
-                    <input className='check' type='checkbox'></input>
-                    </div>
+                      <p>{item.nombre}</p>
+                      <div>
+                      <p>$ {item.precio}</p>
+                      <input onClick={() =>Agregar(key)} className='check' type='checkbox'></input>
+                      </div>
                     </div>
                     </>
                   )

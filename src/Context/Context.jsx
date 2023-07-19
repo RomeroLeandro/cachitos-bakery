@@ -16,7 +16,7 @@ export function ContextProvider({children}){
     function CantCart(cantidad,precio){
         setCant(cant + +cantidad);
         setTotal(total + +precio)
-        // console.log(cant,total)
+        console.log(cant,total,"suma")
     }
 
     const AddList = (item,cantidad) =>{
@@ -32,13 +32,12 @@ export function ContextProvider({children}){
                     arr[index].cant = cantidad;
                 }
             } else{
-                console.log("aca")
                 item.cant = cantidad;
                 arr.push(item);
             }
             return arr;
         })
-        // console.log(lista,"Lista")
+        console.log("sumando precio")
         CantCart(cantidad,cantidad*item.precio);
     }
     // useEffect(() => {

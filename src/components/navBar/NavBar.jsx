@@ -7,8 +7,9 @@ import { Aside } from './aside/Aside';
 
 export const NavBar = () => {
     const [isSearchVisible, setSearchVisible] = useState(false);
+    const [cant, setCant] = useState(0);
     const searchRef = useRef(null);
-    const {cant} = useContext(Context);
+    const {lista} = useContext(Context);
 
     const handleSearchIconClick = () => {
         setSearchVisible(!isSearchVisible);
@@ -20,6 +21,13 @@ export const NavBar = () => {
         }
     };
 
+    useEffect(() =>{
+        let c = 0;
+        lista.map((item) =>{
+            c += item.cant;
+        })
+        setCant(c)
+    },[lista])
     useEffect(() => {
         document.addEventListener('click', handleClickOutside);
         return () => {
