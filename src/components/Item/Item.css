@@ -1,0 +1,92 @@
+.Item{
+    width: 70%;
+    /* border: 1px solid red; */
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Item img{
+    width: 100%;
+}
+.Item .info{
+    /* align-items: center; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* gap:10px; */
+}
+.Item .info hr{
+    width: 70%;
+    margin:10px;
+    align-self: center;
+}
+.cartItem{
+    width: 70%;
+    /* border: 1px solid red; */
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.cartItem img{
+    width: 100px;
+}
+/* .cartItem .info{
+    
+} */
+
+.MyModal{
+    top:0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(0,0,0,0.7);
+    border:2px solid red;
+    z-index: 10000;
+}
+.MyModal *{
+    color: #FFFFFF;
+}
+.MyModal img{
+    width: 200px;
+}
+.MyModal .CloseModal{
+    position: absolute;
+    top:calc(50% - 200px);
+    right: calc(50% - 150px);
+    background-color: #EC9139;
+    width: 40px;
+    height: 40px;
+}
+
+.cart-product{
+    display: flex;
+    flex-direction: row;
+    gap:0.5rem;
+}
+.cart-product .buttons{
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    gap:0.5rem;
+    align-items: center;
+}
+.cart-product .buttons button{
+    padding: 0.25rem;
+}
+
+@media screen and (min-width: 400px) {
+    .Item{
+        width: 300px;
+    }
+    .cartItem{
+        width: 300px;
+    }
+}

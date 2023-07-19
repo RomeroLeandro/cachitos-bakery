@@ -206,6 +206,12 @@ margin: 2px;
   height: 36px;
 }
 
+.bi1{
+  background-color: #ec9139;
+  border-radius: 50%;
+  width: 50%;
+}
+
 @media (min-width: 650px) {
   .search-dropdown div{
     width: 50%;

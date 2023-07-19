@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { Context } from '../../Context/Context';
 import 'firebase/database';
 import './Menu.css';
 import { obtenerProductos } from '../../utils/firebase';
@@ -13,8 +14,9 @@ export const Menu = () => {
   const [categorias, setCategorias] = useState([]);
   const [numSlidesToShow, setNumSlidesToShow] = useState(0);
   const [showModal, setShowModal] = useState(false);
-  const [productoModal, setProductoModal] = useState({}) //Producto que se muestra en el modal
+  const [productoModal, setProductoModal] = useState({});//Producto que se muestra en el modal
   const [ShowAdd, setShowAdd] = useState(false);
+  const {AddList, lista} = useContext(Context);
   useEffect(() => {
     const obtenerProductosMenu = async () => {
       const productosObtenidos = await obtenerProductos();
@@ -66,6 +68,9 @@ export const Menu = () => {
   const OpenModal = (item) =>{
     setShowModal(1 - showModal)
     setProductoModal(item)
+  }
+  const Agregar = () =>{
+    console.log(productoModal);
   }
 
   return (
@@ -121,7 +126,7 @@ export const Menu = () => {
             </div>
             <div className='buttons'>
               <button>PEDIR</button>
-              <button>AGREGAR AL CARRITO</button>
+              <button onClick={() => AddList(productoModal,1)}>AGREGAR AL CARRITO</button>
               <button onClick={() => {setShowAdd(1- ShowAdd)}} className='add'>{ShowAdd ? "^" : "v"}</button>
             </div>
             <div className='adicionales'>
@@ -139,8 +144,8 @@ export const Menu = () => {
                     </div>
                     </div>
                     </>
-                    )
-                  })}
+                  )
+                })}
                 </>
                 :<></>
               }

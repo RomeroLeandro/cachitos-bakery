@@ -11,6 +11,7 @@ import { Menu } from './components/menu/Menu';
 import { HowAsk } from './components/howAsk/HowAsk';
 import { Find } from './components/find/Find';
 import { Home } from './components/home/Home';
+import { Carrito } from './components/Carrito/Carrito';
 import { WhatsappIcon } from './components/whatsapp-icon/WhatsappIcon';
 import clock from './assets/icons/clock.png'
 
@@ -59,6 +60,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/menu' element={<Menu />} />
+            <Route path='/Carrito' element={<Carrito />} />
             <Route path='/novedades' element={<Find />} />
             <Route path='/comopedir' element={<HowAsk />} />
             <Route path='/sobrenosotros' element={<About />} />
