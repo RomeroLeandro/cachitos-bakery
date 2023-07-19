@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import firebase from 'firebase/app';
 import 'firebase/database';
 import './Menu.css';
 import { obtenerProductos } from '../../utils/firebase';
 import Slider from 'react-slick';
-import { ModalProduct } from '../modalProduct/ModalProduct';
 import Modal from 'react-modal'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
