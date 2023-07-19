@@ -87,14 +87,15 @@ export const Menu = () => {
     check.map((chk,key) =>{
       if(chk){
         arr.push(productosPorCategoria['adicionales'][key])
-        // AddList(productosPorCategoria['adicionales'][key],1)
       }
     })
     arr.map((item) =>{
       setTimeout(() =>{
         AddList(item,1)
-      },2000)
+      },200)
     })
+    setShowAdd(0)
+    setShowModal(0)
   }
 
   return (

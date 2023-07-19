@@ -13,11 +13,11 @@ export function ContextProvider({children}){
     
 
 
-    function CantCart(cantidad,precio){
-        setCant(cant + +cantidad);
-        setTotal(total + +precio)
-        console.log(cant,total,"suma")
-    }
+    // function CantCart(cantidad,precio){
+    //     setCant(cant + +cantidad);
+    //     setTotal(total + +precio)
+    //     console.log(cant,total,"suma")
+    // }
 
     const AddList = (item,cantidad) =>{
         console.log(item,cantidad,"addList -> context")
@@ -28,6 +28,9 @@ export function ContextProvider({children}){
             if(index !== -1){
                 if(arr[index].hasOwnProperty("cant")){
                     arr[index].cant += cantidad;
+                    if(arr[index].cant <= 0){
+                        arr.splice(index,1)
+                    }
                 } else{
                     arr[index].cant = cantidad;
                 }
@@ -37,8 +40,8 @@ export function ContextProvider({children}){
             }
             return arr;
         })
-        console.log("sumando precio")
-        CantCart(cantidad,cantidad*item.precio);
+        // console.log("sumando precio")
+        // CantCart(cantidad,cantidad*item.precio);
     }
     // useEffect(() => {
     //     console.log(lista);

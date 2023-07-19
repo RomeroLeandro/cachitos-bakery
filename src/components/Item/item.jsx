@@ -31,7 +31,7 @@ export function Item({Producto}){
                     <div className='buttons'>
                         <button onClick={() => Add(1)}>+</button>
                         <p>{Producto.cant}</p>
-                        <button onClick={() => Add(-1)}>-</button>
+                        <button onClick={() => {Producto.cant > 0 && Add(-1)}}>-</button>
                     </div>
                 </div>
         </div>
