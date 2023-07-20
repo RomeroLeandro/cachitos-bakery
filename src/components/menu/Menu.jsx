@@ -17,7 +17,7 @@ export const Menu = () => {
   const [productoModal, setProductoModal] = useState({});//Producto que se muestra en el modal
   const [ShowAdd, setShowAdd] = useState(false);
   const [check,setCheck] = useState([0,0])
-  const {AddList, lista} = useContext(Context);
+  const {AddList} = useContext(Context);
   useEffect(() => {
     const obtenerProductosMenu = async () => {
       const productosObtenidos = await obtenerProductos();
@@ -67,9 +67,14 @@ export const Menu = () => {
     };
   }, []);
 
-  const OpenModal = (item) =>{
+  const OpenModal = (item,event) =>{
+    // event.stopPropagation();
     setShowModal(1 - showModal)
     setProductoModal(item)
+  }
+  const CloseModal = (event) =>{
+    event.stopPropagation();
+    setShowModal(0)
   }
   function Agregar(key){
     // console.log(key)
@@ -78,7 +83,7 @@ export const Menu = () => {
       chk[key] = 1- chk[key]
       return (chk)
     })
-    console.log(check)
+    // console.log(check)
   }
 
   const AddtoCart = (item) =>{
@@ -86,13 +91,13 @@ export const Menu = () => {
     // AddList(item,1)
     check.map((chk,key) =>{
       if(chk){
-        arr.push(productosPorCategoria['adicionales'][key])
+        arr.push(productosPorCategoria['adicionales'][key]);
       }
     })
     arr.map((item) =>{
-      setTimeout(() =>{
+      return(setTimeout(() =>{
         AddList(item,1)
-      },200)
+      },200))
     })
     setShowAdd(0)
     setShowModal(0)
@@ -132,16 +137,16 @@ export const Menu = () => {
       ))}
       
       <Modal
-          // style={{top:posModal.top,left:posModal.left}}
           isOpen = {showModal}
           onRequestClose= {OpenModal}
-          contentLabel="EjemploModal"
-          className="MyModal"
+          className="modal"
+          
           shouldCloseOnOverlayClick = {false}
           overlayClassName = "cetered-overlay"
       >
+        <div /*onClick={CloseModal}*/ className='modal-container'>
+          <button className='close-modal' onClick={OpenModal}>X</button>
           <div className='modal-center'>
-            {/* <button className='CloseModal' onClick={OpenModal}>X</button> */}
             <img src={productoModal.img} alt={productoModal.nombre}/>
             <div className='text-container'>
               <h2>{productoModal.nombre}</h2>
@@ -158,14 +163,14 @@ export const Menu = () => {
                 ?<>
                 <p>¿Deseas agregar adicionales?</p>
                 {productosPorCategoria["adicionales"].map((item,key) => {
-                  console.log(key,"key")
+                  // console.log(key,"key")
                   return(
                     <>
                     <div key = {key} className='adicional'>
                       <p>{item.nombre}</p>
                       <div>
-                      <p>$ {item.precio}</p>
-                      <input onClick={() =>Agregar(key)} className='check' type='checkbox'></input>
+                        <p>$ {item.precio}</p>
+                        <input onClick={() =>Agregar(key)} className='check' type='checkbox'></input>
                       </div>
                     </div>
                     </>
@@ -176,6 +181,7 @@ export const Menu = () => {
               }
             </div>
           </div>
+        </div>
       </Modal>
     </div>
   )

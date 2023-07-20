@@ -20,9 +20,9 @@ export function ContextProvider({children}){
     // }
 
     const AddList = (item,cantidad) =>{
-        console.log(item,cantidad,"addList -> context")
+        // console.log(item,cantidad,"addList -> context")
         let index = lista.findIndex(prod => prod.nombre === item.nombre);
-        console.log(index,"indice")
+        // console.log(index,"indice")
         setLista(prevLista =>{
             let arr = [...prevLista];
             if(index !== -1){

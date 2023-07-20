@@ -1,14 +1,13 @@
 .menu{
   width: 100%;
   display: flex;
-justify-content: center;
+  justify-content: center;
 }
 .card-product{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin: 20px;
   width: 100%;
   border-radius: 15px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -80,114 +79,90 @@ width: 100%;
   height: 50px;
   border-color: red;
 }
-
-.MyModal{
-  top:0;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color:rgba(0,0,0,0.7);
-  /* border:2px solid red; */
-  z-index: 10000;
-}
-.MyModal *{
-  /* color: #FFFFFF; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.MyModal .modal-center{
-  background-color: #FFFFFF;
-  width: 90%;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  border:none;
-  height: fit-content;
-  padding-bottom: 0.5rem;
-}
-.MyModal .text-container{
-  padding:0.5rem;
-}
-.MyModal .text-container h2{
-  color: black;
-}
-.MyModal .text-container p{
-  color: #606060;
-}
-.MyModal img{
+/* ESTILOS PARA EL MODAL */
+.modal{
   width: 100%;
-  border-radius: 15px;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(128,128,128,0.3);
+  top:0;
+  margin:0;
 }
-.MyModal .CloseModal{
-  position: absolute;
-  top:calc(50% - 200px);
-  right: calc(50% - 150px);
-  background-color: #EC9139;
+.modal .close-modal{
   width: 40px;
   height: 40px;
-  text-align: center;
-  vertical-align: middle;
-}
-.MyModal .buttons{
-  display:flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  width: 80%;
-  justify-content: center;
-}
-.MyModal button:not(.add){
-  display: flex;
-  width: fit-content;
-  height: 36px;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
+  border:none;
+  margin: 5px;
   background-color: #EC9139;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  border: none;
-  color: #fff;
-  padding:0.5rem;
 }
-.MyModal .add{
-  border: none;
-  padding: 0.5rem;
-  background-color: #FFFFFF;
-  color: #606060;
-  font-weight: 900;
-  font-size: 20px;
-}
-.MyModal .adicionales{
+.modal-container{
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  /* border: 1px solid blue; */
-  width: 80%;
-  align-items: flex-start;
-  gap:0.25rem;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
 }
-/* .MyModal .adicionales p{
-  ;
-} */
-.adicional{
+.modal-container .modal-center{
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  padding-bottom: 1rem;
+}
+
+.modal-center img{
+  border-radius: 15px;
   width: 100%;
+}
+/* ESTILOS PARA LA BOTONERA */
+.modal-center .buttons{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  color: #606060;
-  /* border:1px solid red; */
+  gap:0.5rem;
 }
-.adicional div{
-  display:  flex;
-  flex-direction: row;
-  gap: 	0.5rem;
-}
-.adicional p{
-  color: #606060;
-}
-.check{
+.modal-center .buttons button:not(.add){
+  padding: 0.5rem;
+  border:none;
   background-color: #EC9139;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.modal-center .buttons .add{
+  width: 40px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+}
+/* ESTILO PARA LOS ADICIONALES */
+.modal-center .adicionales{
+  display: flex;
+  flex-direction: column;
+  gap:0.5rem;
+  width: 100%;
+  padding: 0.5rem;
+  /* border: 1px solid red; */
+}
+.modal-center .adicionales .adicional{
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid blue; */
+  justify-content: space-between;
+  width: 100%;
+}
+.modal-center .adicionales .adicional div{
+  display: flex;
+  flex-direction: row;
+  gap:0.5rem;
+}
+
+@media screen and (max-width: 450px) {
+  .container-full{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }

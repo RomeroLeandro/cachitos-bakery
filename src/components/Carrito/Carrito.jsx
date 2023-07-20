@@ -8,7 +8,7 @@ import { Item } from '../Item/item'
 // function Carrito(){
 export const Carrito = () =>{
     let { lista,Clean } = useContext(Context)
-    let [productos, setProductos] = useState([])
+    // let [productos, setProductos] = useState([])
     let [total, setTotal] = useState(0);
 
     useEffect(() => {
@@ -17,7 +17,7 @@ export const Carrito = () =>{
             tot += item.cant * item.precio 
         })
         setTotal(tot)
-        setProductos(lista)
+        // setProductos(lista)
         // console.log(productos[0])
     },[lista])
     
@@ -30,13 +30,20 @@ export const Carrito = () =>{
     }
 
     function Finish(){
-        // console.log(lista);
-        let message = `Pedido:\%0D%0A${lista.map((item) =>{
-            let pr = `${item.cant} ${item.name}%0D%0A`
-            return pr
-        }).join('')}`
-        // console.log(message)
-        window.open(`https://wa.me/5492664006000?text=${message}`)
+        let ans = window.confirm("Se te va a redirigir a Whatsapp para que puedas finalizar tu pedido")
+        if(ans){
+            let message = `Pedido:\%0D%0A${lista.map((item) =>{
+                let pr = `${item.cant} ${item.nombre}%0D%0A`
+                return pr
+            }).join('')}`
+            // console.log(message)
+            window.open(`https://wa.me/5492664006000?text=${message}`)
+        }// else {
+        //     ans = window.confirm("Desea ir al menu para ver otro plato?")
+        //     if(ans){
+        //         window.location = "/menu"
+        //     }
+        // }
     }
     return(
         <div className="Carrito">
@@ -44,8 +51,7 @@ export const Carrito = () =>{
             {lista.length > 0
                 ?<>
                     {lista.map((item,index) => {
-                        console.log(productos[index])
-                        return<Item key={item.id} Producto={lista[index]}/>
+                        return<Item key={index} Producto={lista[index]}/>
                     })}
                     <div className='Fin'>
                         <button onClick={Finish}>Finalizar Pedido (${total})</button>

@@ -1,24 +1,17 @@
-import { useContext, useState,useEffect, useRef } from 'react'
-// import { useParams } from 'react-router-dom'
-import Modal from 'react-modal'
-// import Add from '../Add/Add';
-// import './Item.css'
+import { useContext } from 'react'
 import { Context } from '../../Context/Context';
 import './Item.css'
 
 export function Item({Producto}){
     const { AddList } = useContext(Context)
-    const [cant, setCant] = useState(0)
+    // const [cant, setCant] = useState(0)
     
-    // useEffect(() =>{
-    //     setCant(Producto.cant)
-    // },[Producto])
 
     const Add = (cantidad) =>{
         AddList(Producto,cantidad)
     }
 
-    console.log(Producto.img," ITEM")
+    // console.log(Producto.img," ITEM")
     return(
         <div className= "cartItem">
                 <div className='cart-product' key={Producto.id}>
