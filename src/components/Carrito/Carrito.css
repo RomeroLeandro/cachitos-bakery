@@ -4,22 +4,24 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap:1rem;
 }
 .Carrito .Fin{
-    width: 100%;
-    /* height: 5rem; */
-    /* border:1px solid red; */
+    width: 80%;
     display: flex;
     flex-direction: row;
     gap:20px;
     justify-content: center;
     text-align: center;
     vertical-align:middle;    
+    /* border:1px solid red; */
 }
 .Carrito .Fin button{
     /* display: flex; */
-    width: 169px;
+    /* width: 169px; */
+    padding: 0 0.5rem;
     height: 36px;
     justify-content: center;
     align-items: center;

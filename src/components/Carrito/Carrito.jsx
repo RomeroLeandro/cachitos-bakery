@@ -36,14 +36,8 @@ export const Carrito = () =>{
                 let pr = `${item.cant} ${item.nombre}%0D%0A`
                 return pr
             }).join('')}`
-            // console.log(message)
             window.open(`https://wa.me/5492664006000?text=${message}`)
-        }// else {
-        //     ans = window.confirm("Desea ir al menu para ver otro plato?")
-        //     if(ans){
-        //         window.location = "/menu"
-        //     }
-        // }
+        }
     }
     return(
         <div className="Carrito">
