@@ -86,13 +86,12 @@ export const Menu = () => {
     // console.log(check)
   }
   const Pedir = () =>{
-    AddList(productoModal);
+    AddtoCart(productoModal)
     Finish();
   }
 
   const AddtoCart = (item) =>{
     let arr = [item]
-    // AddList(item,1)
     check.map((chk,key) =>{
       if(chk){
         arr.push(productosPorCategoria['adicionales'][key]);
@@ -126,8 +125,8 @@ export const Menu = () => {
             <h2 id={categoria}>{categoria}</h2>
             {productos.map((producto) => (
               <>
-              <div className='card-product' key={producto.id}>
-                <img onClick={() => OpenModal(producto)} src={producto.img} alt="" />
+              <div onClick={() => OpenModal(producto)} className='card-product' key={producto.id}>
+                <img src={producto.img} alt="" />
                 <div>
                   <h3>{producto.nombre}</h3>
                   <p className='detalle'>{producto.detalle}</p>
@@ -167,7 +166,6 @@ export const Menu = () => {
                 ?<>
                 <p>¿Deseas agregar adicionales?</p>
                 {productosPorCategoria["adicionales"].map((item,key) => {
-                  // console.log(key,"key")
                   return(
                     <>
                     <div key = {key} className='adicional'>

@@ -8,7 +8,6 @@ import { Item } from '../Item/item'
 // function Carrito(){
 export const Carrito = () =>{
     let { lista,Clean,Finish } = useContext(Context)
-    // let [productos, setProductos] = useState([])
     let [total, setTotal] = useState(0);
 
     useEffect(() => {
@@ -17,8 +16,6 @@ export const Carrito = () =>{
             tot += item.cant * item.precio 
         })
         setTotal(tot)
-        // setProductos(lista)
-        // console.log(productos[0])
     },[lista])
     
     function HandleClear(){
@@ -26,7 +23,6 @@ export const Carrito = () =>{
         if(ans){
             Clean();
         }
-        // alert("esta a punto de borrar el carrito")
     }
 
     
