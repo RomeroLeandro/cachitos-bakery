@@ -7,7 +7,7 @@ import { Item } from '../Item/item'
 
 // function Carrito(){
 export const Carrito = () =>{
-    let { lista,Clean } = useContext(Context)
+    let { lista,Clean,Finish } = useContext(Context)
     // let [productos, setProductos] = useState([])
     let [total, setTotal] = useState(0);
 
@@ -29,16 +29,7 @@ export const Carrito = () =>{
         // alert("esta a punto de borrar el carrito")
     }
 
-    function Finish(){
-        let ans = window.confirm("Se te va a redirigir a Whatsapp para que puedas finalizar tu pedido")
-        if(ans){
-            let message = `Pedido:\%0D%0A${lista.map((item) =>{
-                let pr = `${item.cant} ${item.nombre}%0D%0A`
-                return pr
-            }).join('')}`
-            window.open(`https://wa.me/5492664006000?text=${message}`)
-        }
-    }
+    
     return(
         <div className="Carrito">
             <h2>Carrito</h2>

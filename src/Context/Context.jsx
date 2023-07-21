@@ -13,11 +13,16 @@ export function ContextProvider({children}){
     
 
 
-    // function CantCart(cantidad,precio){
-    //     setCant(cant + +cantidad);
-    //     setTotal(total + +precio)
-    //     console.log(cant,total,"suma")
-    // }
+    function Finish(){
+        let ans = window.confirm("Se te va a redirigir a Whatsapp para que puedas finalizar tu pedido")
+        if(ans){
+            let message = `Pedido:\%0D%0A${lista.map((item) =>{
+                let pr = `${item.cant} ${item.nombre}%0D%0A`
+                return pr
+            }).join('')}`
+            window.open(`https://wa.me/5492664006000?text=${message}`)
+        }
+    }
 
     const AddList = (item,cantidad) =>{
         // console.log(item,cantidad,"addList -> context")
@@ -73,6 +78,7 @@ export function ContextProvider({children}){
             cant:cant,
             total:total,
             Clean:Clean,
+            Finish:Finish,
         }}>
             {children}
         </Context.Provider>

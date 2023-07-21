@@ -17,7 +17,7 @@ export const Menu = () => {
   const [productoModal, setProductoModal] = useState({});//Producto que se muestra en el modal
   const [ShowAdd, setShowAdd] = useState(false);
   const [check,setCheck] = useState([0,0])
-  const {AddList} = useContext(Context);
+  const {AddList, Finish} = useContext(Context);
   useEffect(() => {
     const obtenerProductosMenu = async () => {
       const productosObtenidos = await obtenerProductos();
@@ -84,6 +84,10 @@ export const Menu = () => {
       return (chk)
     })
     // console.log(check)
+  }
+  const Pedir = () =>{
+    AddList(productoModal);
+    Finish();
   }
 
   const AddtoCart = (item) =>{
@@ -154,7 +158,7 @@ export const Menu = () => {
               <p>${productoModal.precio}</p>
             </div>
             <div className='buttons'>
-              <button>PEDIR</button>
+              <button onClick={Pedir}>PEDIR</button>
               <button onClick={() => AddtoCart(productoModal)}>AGREGAR AL CARRITO</button>
               <button onClick={() => {setShowAdd(1- ShowAdd)}} className='add'>{ShowAdd ? "^" : "v"}</button>
             </div>
