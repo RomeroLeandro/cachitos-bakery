@@ -22,9 +22,9 @@ export function Item({Producto}){
                         <p>$ {Producto.precio}.00</p>
                     </div>
                     <div className='buttons'>
-                        <button onClick={() => Add(1)}>+</button>
-                        <p>{Producto.cant}</p>
                         <button onClick={() => {Producto.cant > 0 && Add(-1)}}>-</button>
+                        <p>{Producto.cant}</p>
+                        <button onClick={() => Add(1)}>+</button>
                     </div>
                 </div>
         </div>

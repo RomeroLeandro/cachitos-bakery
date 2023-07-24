@@ -99,12 +99,14 @@ export const NavBar = () => {
                     <div className="Carrito">
                         {lista.length > 0
                             ?<>
-                                {lista.map((item,index) => {
-                                    return<Item key={index} Producto={lista[index]}/>
-                                })}
+                                <div className='items'>
+                                    {lista.map((item,index) => {
+                                        return<Item key={index} Producto={lista[index]}/>
+                                    })}
+                                </div>
                                 <div className='Fin'>
-                                    <button onClick={Finish}>Finalizar Pedido (${total})</button>
-                                    <button onClick={HandleClear}>Borrar carrito</button>
+                                    <button key={1} onClick={Finish}>Finalizar Pedido (${total})</button>
+                                    <button key={2} onClick={HandleClear}>Borrar carrito</button>
                                 </div>
                             </>
                             :<h1>Carrito Vacio</h1>

@@ -260,10 +260,12 @@ nav img {
 .cart-container{
   width: fit-content;
   height: fit-content;
+  max-height: 600px;
   background-color: #FFFFFF;
   padding:  0.5rem ;
   margin: 0 2rem;
   border-radius: 15px;
+  /* overflow: auto; */
 }
 
 
@@ -275,7 +277,17 @@ nav img {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  /* border: 1px solid red; */
   gap:1rem;
+}
+.Carrito .items{
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: column;
+  gap:0.5rem;
+  min-height: 200px;
+  max-height: 300px;
+  overflow: auto;
 }
 .Carrito .Fin{
   width: 80%;
@@ -285,6 +297,7 @@ nav img {
   justify-content: center;
   text-align: center;
   vertical-align:middle;
+  flex-shrink: 0;
 }
 .Carrito .Fin button{
   padding: 0 0.5rem;

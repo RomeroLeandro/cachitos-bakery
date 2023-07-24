@@ -111,7 +111,7 @@ export const Menu = () => {
   return (
     <div className='Menu-Completo'>
       <div className='container-slick'>
-      <Slider className="category" slidesToShow={numSlidesToShow}>
+      <Slider className="category" slidesToShow={4}>
         {categorias.map((categoria) => (
           <li key={categoria}>
             <button onClick={() => handleCategoriaClick(categoria)}>

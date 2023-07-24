@@ -41,7 +41,7 @@
 }
 
 .cartItem img{
-    width: 100px;
+    max-width: 100px;
 }
 
 .cart-product{
@@ -50,6 +50,8 @@
     flex-direction: row;
     justify-content: space-between;
     gap:0.5rem;
+    border-bottom: 1px solid #A0A0A0;
+    padding: 0.5rem 0;
 }
 
 .cart-product .buttons{
