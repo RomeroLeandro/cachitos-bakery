@@ -41,7 +41,6 @@ export const Carrito = () =>{
                 </>
                 :<h1>Carrito Vacio</h1>
             }
-            
         </div>
     )
 }

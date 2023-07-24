@@ -16,7 +16,7 @@ export function Item({Producto}){
         <div className= "cartItem">
                 <div className='cart-product' key={Producto.id}>
                     <img src={Producto.img} alt="" />
-                    <div>
+                    <div className='i'>
                         <h3>{Producto.nombre}</h3>
                         <p className='detalle'>{Producto.detalle}</p>
                         <p>$ {Producto.precio}.00</p>

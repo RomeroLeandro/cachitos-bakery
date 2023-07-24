@@ -83,12 +83,14 @@ a{
  button, svg{
   cursor: pointer;
  }
-
+.ReactModal_overlay{
+  background-color: transparent;
+}
  .modal-overlay {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 1);
   position: fixed;
   top: 0;
   left: 0;

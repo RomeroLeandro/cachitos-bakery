@@ -148,8 +148,8 @@ export const Menu = () => {
           overlayClassName = "cetered-overlay"
       >
         <div /*onClick={CloseModal}*/ className='modal-container'>
-          <button className='close-modal' onClick={OpenModal}>X</button>
           <div className='modal-center'>
+            <button className='close-modal' onClick={OpenModal}>X</button>
             <img src={productoModal.img} alt={productoModal.nombre}/>
             <div className='text-container'>
               <h2>{productoModal.nombre}</h2>
