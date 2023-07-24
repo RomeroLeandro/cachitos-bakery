@@ -38,11 +38,7 @@ export const Aside = () => {
       link: "comopedir",
       nombre: "Como pedir"
     },
-    {
-      id: 3,
-      link: "novedades",
-      nombre: "Novedades y promociones"
-    },
+    
     {
       id: 4,
       link: "sobrenosotros",
