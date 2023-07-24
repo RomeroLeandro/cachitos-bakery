@@ -54,7 +54,9 @@ export const Menu = () => {
   useEffect(() => {
     const handleResize = () => {
       const windowWidth = window.innerWidth;
+      console.log(windowWidth);
       const numSlides = Math.floor(windowWidth / 200); // Ajusta el ancho de los elementos según tus necesidades
+      console.log(numSlides)
       setNumSlidesToShow(numSlides);
     };
 
