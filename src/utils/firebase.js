@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
+
 const firebaseConfig = {
   apiKey: "AIzaSyBIUQy46qVHkhD6eV8FgMxLKIhwYgbW5Ns",
   authDomain: "cachitosbakery-52d03.firebaseapp.com",
@@ -30,4 +31,30 @@ export const obtenerProductos = async () => {
   }
 };
 
-console.log(obtenerProductos);
+export const obtenerComentarios = async () => {
+  try {
+    const comentariosRef = collection(firestore, 'comentarios');
+    const querySnapshot = await getDocs(comentariosRef);
+
+    const comentarios = [];
+    querySnapshot.forEach((doc) => {
+      const comentario = { id: doc.id, ...doc.data() };
+      comentarios.push(comentario);
+    });
+
+    return comentarios;
+  } catch (error) {
+    console.log('Error al obtener los comentarios:', error);
+    return [];
+  }
+};
+
+export const agregarComentario = async (comentario) => {
+  try {
+    const comentariosRef = collection(firestore, 'comentarios');
+    const docRef = await addDoc(comentariosRef, comentario);
+    return docRef;
+  } catch (error) {
+    throw new Error('Error al agregar el comentario:', error);
+  }
+};

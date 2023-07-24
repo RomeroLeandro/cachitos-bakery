@@ -20,7 +20,7 @@ export const HowAsk = () => {
       <p className='text-how-ask'>¡Esperamos tu consulta!</p>
       <div className='container-wpp'>
         <img src={whatsapp} alt="WhatsApp Icon" className='img-wpp-how-ask' />
-        <a className='number' href="https://api.whatsapp.com/send?phone=541155755890" target="_blank" rel="noopener noreferrer">099358314</a>
+        <a className='number' href="https://api.whatsapp.com/send?phone=59899358314" target="_blank" rel="noopener noreferrer">099358314</a>
       </div>
       <a href="https://www.instagram.com/cachitosbakery1/" target="_blank" rel="noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">

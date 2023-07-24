@@ -4,28 +4,28 @@ import { Link } from "react-router-dom";
 export const Opinion = ({ addComment }) => {
     const [nombre, setNombre] = useState('');
     const [comentario, setComentario] = useState('');
-    const [valoracion, setValoracion] = useState(0);
+    const [estrellas, setEstrellas] = useState(0);
     const [enviado, setEnviado] = useState(false);
 
 
     const handleStarClick = (index) => {
-        setValoracion(index);
+        setEstrellas(index);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!nombre || !comentario || valoracion === 0) {
+        if (!nombre || !comentario || estrellas === 0) {
             return; // Si algún campo requerido está vacío, no se envía el comentario
         }
         const newComment = {
             nombre,
             comentario,
-            valoracion,
+            estrellas,
         };
         addComment(newComment);
         setNombre('');
         setComentario('');
-        setValoracion(0);
+        setEstrellas(0);
         setEnviado(true);
     };
 
@@ -53,7 +53,7 @@ export const Opinion = ({ addComment }) => {
                             {[1, 2, 3, 4, 5].map((index) => (
                                 <span
                                     key={index}
-                                    className={`star ${index <= valoracion ? 'filled' : ''}`}
+                                    className={`star ${index <= estrellas ? 'filled' : ''}`}
                                     onClick={() => handleStarClick(index)}
                                 >
                                     ★
