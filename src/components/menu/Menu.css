@@ -11,6 +11,46 @@ justify-content: center;
   margin: 20px;
   width: 100%;
 }
+/* .menu-container {
+  overflow-x: scroll;
+  white-space: nowrap;
+} */
+
+.category {
+  list-style: none;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: -2px;
+}
+
+/* .container-full{
+  margin-top: 500px;
+} */
+
+.scroll-margin {
+  scroll-margin-top: 120px; /* Ajusta la altura deseada desde la parte superior */
+}
+
+.container-menu:first-child {
+  margin-top: 80px; 
+  margin-bottom: -50px;
+}
+/* .category li {
+  display: inline;
+}
+
+.category a {
+  text-decoration: none;
+  color: #000;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+.category a:hover {
+  background-color: #dcdcdc;
+} */
 
 .card-product img{
   width: 130px;
@@ -25,7 +65,7 @@ width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0;
   background-color: #fff; /* Ajusta el color de fondo según tus preferencias */
   padding: 10px;

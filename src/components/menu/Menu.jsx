@@ -12,6 +12,9 @@ export const Menu = () => {
   const [productos, setProductos] = useState([]);
   const [categorias, setCategorias] = useState([]);
   const [numSlidesToShow, setNumSlidesToShow] = useState(0);
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
+  const ordenCategorias = ['cachitos', 'pan', 'tequeños salados', 'tequeños dulces', 'empanadas', 'arepas', 'lasaña', 'adicionales', 'postres', 'bebidas'];
+
   useEffect(() => {
     const obtenerProductosMenu = async () => {
       const productosObtenidos = await obtenerProductos();
@@ -21,28 +24,45 @@ export const Menu = () => {
       const categoriasUnicas = Array.from(
         new Set(productosObtenidos.map((producto) => producto.categoria))
       );
-      setCategorias(categoriasUnicas);
+
+      // Ordenar las categorías según el orden específico
+      const categoriasOrdenadas = ordenCategorias.filter((categoria) =>
+        categoriasUnicas.includes(categoria)
+      );
+
+      setCategorias(categoriasOrdenadas);
     };
 
     obtenerProductosMenu();
   }, []);
 
-  const productosPorCategoria = {};
-  productos.forEach((producto) => {
-    const categoria = producto.categoria;
-    if (!productosPorCategoria[categoria]) {
-      productosPorCategoria[categoria] = [];
-    }
-    productosPorCategoria[categoria].push(producto);
-  });
+  const ordenarProductosPorCategoria = (categoria) => {
+    return productos.filter((producto) => producto.categoria === categoria);
+  };
 
 
+  // const handleCategoriaClick = (categoria) => {
+  //   const categoriaElement = document.getElementById(categoria);
+  //   if (categoriaElement) {
+  //     categoriaElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  
+  //     // Agrega un retraso para asegurarte de que el scrollIntoView se complete antes de agregar la clase
+  //     setTimeout(() => {
+  //       categoriaElement.classList.add('scroll-margin');
+  //     }, 0);
+  //   }
+  // };
   const handleCategoriaClick = (categoria) => {
     const categoriaElement = document.getElementById(categoria);
     if (categoriaElement) {
-      categoriaElement.scrollIntoView({ behavior: 'smooth' });
+      categoriaElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+    setCategoriaSeleccionada(categoria);
+    setTimeout(() => {
+      categoriaElement.classList.add('scroll-margin');
+    }, 1000);
   };
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -64,33 +84,36 @@ export const Menu = () => {
     <div>
       <div className='container-slick'>
       <Slider className="category" slidesToShow={numSlidesToShow}>
-        {categorias.map((categoria) => (
-          <li key={categoria}>
-            <button onClick={() => handleCategoriaClick(categoria)}>
-              {categoria}
-            </button>
-          </li>
-        ))}
+      {categorias.map((categoria) => (
+    <li
+      key={categoria}
+      className={categoria === categoriaSeleccionada ? 'selected' : ''}
+    >
+      <button onClick={() => handleCategoriaClick(categoria)}>
+        {categoria.toUpperCase()} {/* Convertimos el texto a mayúsculas */}
+      </button>
+    </li>
+  ))}
       </Slider>
       </div>
-      {Object.entries(productosPorCategoria).map(([categoria, productos]) => (
-        <div className='container-full'>
-          
-        <div key={categoria} className='container-menu'>
-          <h2 id={categoria}>{categoria}</h2>
-          {productos.map((producto) => (
-            <div className='card-product' key={producto.id}>
-              <img src={producto.img} alt="" />
-              <div>
-         <h3>{producto.nombre}</h3>
-       <p>{producto.detalle}</p>
-      <p>${producto.precio}.00</p>
-        </div>
-            </div>
-          ))}
-        </div>
+      {categorias.map((categoria) => (
+  <div className='container-full' key={categoria}>
+    <div id={categoria} className='container-menu'>
+      <h2>{categoria}</h2>
+      {ordenarProductosPorCategoria(categoria).map((producto) => (
+        <div className='card-product' key={producto.id}>
+          <img src={producto.img} alt='' />
+          <div>
+            <h3>{producto.nombre}</h3>
+            <p>{producto.detalle}</p>
+            <p>${producto.precio}.00</p>
+          </div>
         </div>
       ))}
+    </div>
+  </div>
+))}
+      
     </div>
   )
 }
