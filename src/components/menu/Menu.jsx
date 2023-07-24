@@ -19,6 +19,8 @@ export const Menu = () => {
   const [ShowAdd, setShowAdd] = useState(false);
   const [check,setCheck] = useState([0,0])
   const {AddList, Finish} = useContext(Context);
+  const ordenCategorias = ['cachitos', 'pan', 'tequeños salados', 'tequeños dulces', 'empanadas', 'arepas', 'lasaña', 'adicionales', 'postres', 'bebidas'];
+  
   useEffect(() => {
     const obtenerProductosMenu = async () => {
       const productosObtenidos = await obtenerProductos();
@@ -28,7 +30,11 @@ export const Menu = () => {
       const categoriasUnicas = Array.from(
         new Set(productosObtenidos.map((producto) => producto.categoria))
       );
-      setCategorias(categoriasUnicas);
+      let arr = []
+      ordenCategorias.map((item) => {
+        arr.push(item.toUpperCase())
+      })
+      setCategorias(arr);
     };
 
     obtenerProductosMenu();
@@ -46,7 +52,8 @@ export const Menu = () => {
 
 
   const handleCategoriaClick = (categoria) => {
-    const categoriaElement = document.getElementById(categoria);
+    const categoriaElement = document.getElementById(categoria.toLowerCase());
+    categoriaElement.classList.toggle('clicked');
     const pos = categoriaElement.getBoundingClientRect().top;
     const offset = pos + window.pageYOffset - 100;
     if (categoriaElement) {
@@ -114,7 +121,7 @@ export const Menu = () => {
   return (
     <div className='Menu-Completo'>
       <div className='container-slick'>
-      <Slider className="category" slidesToShow={4}>
+      <ul className="category">
         {categorias.map((categoria) => (
           <li key={categoria}>
             <button onClick={() => handleCategoriaClick(categoria)}>
@@ -122,7 +129,7 @@ export const Menu = () => {
             </button>
           </li>
         ))}
-      </Slider>
+      </ul>
       </div>
       {Object.entries(productosPorCategoria).map(([categoria, productos]) => (
         <div className='container-full'>  

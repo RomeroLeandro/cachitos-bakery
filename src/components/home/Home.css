@@ -36,7 +36,8 @@ line-height: 2;
   justify-content: space-evenly;
   align-items: center;
   gap: 15px;
-  height: 50%;
+  margin-top: 2rem;
+  /* height: 50%; */
 }
 .image-container {
   position: relative;
