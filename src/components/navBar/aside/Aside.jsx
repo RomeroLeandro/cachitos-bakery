@@ -30,31 +30,36 @@ export const Aside = () => {
   const links = [
     {
       id: 1,
+      link: "",
+      nombre: "Inicio"
+    },
+    {
+      id: 2,
       link: "menu",
       nombre: "Menu"
     },
     {
-      id: 2,
+      id: 3,
       link: "comopedir",
       nombre: "Como pedir"
     },
     {
-      id: 3,
+      id: 4,
       link: "novedades",
-      nombre: "Novedades y promociones"
+      nombre: "Promociones y Novedades"
     },
     {
-      id: 4,
+      id: 5,
       link: "sobrenosotros",
       nombre: "Quienes somos"
     },
     {
-      id: 5,
+      id: 6,
       link: "contacto",
       nombre: "Contacto"
     },
     {
-      id: 6,
+      id: 7,
       link: "comunidad",
       nombre: "Comunidad"
     },
