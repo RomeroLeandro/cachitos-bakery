@@ -41,7 +41,9 @@
 }
 
 .cartItem img{
-    max-width: 100px;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
 }
 
 .cart-product{

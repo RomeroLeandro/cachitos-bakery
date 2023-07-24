@@ -7,6 +7,7 @@ import Slider from 'react-slick';
 import Modal from 'react-modal'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { off } from 'firebase/database';
 
 
 export const Menu = () => {
@@ -46,8 +47,10 @@ export const Menu = () => {
 
   const handleCategoriaClick = (categoria) => {
     const categoriaElement = document.getElementById(categoria);
+    const pos = categoriaElement.getBoundingClientRect().top;
+    const offset = pos + window.pageYOffset - 100;
     if (categoriaElement) {
-      categoriaElement.scrollIntoView({ behavior: 'smooth' });
+      window.scrollTo({top: offset, behavior: 'smooth' });
     }
   };
 
@@ -123,6 +126,7 @@ export const Menu = () => {
       </div>
       {Object.entries(productosPorCategoria).map(([categoria, productos]) => (
         <div className='container-full'>  
+          {/* <span className='dummy' /> */}
           <div key={categoria} className='container-menu'>
             <h2 id={categoria}>{categoria}</h2>
             {productos.map((producto) => (
