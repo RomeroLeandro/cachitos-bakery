@@ -67,7 +67,7 @@ line-height: 2;
     width: 600px;
   }
   .image-container{
-    height: 200px;
+    width: 100%;
   }
   .description-menu{
     font-size: 24px;

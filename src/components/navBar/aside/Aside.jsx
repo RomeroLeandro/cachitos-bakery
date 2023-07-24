@@ -36,12 +36,12 @@ export const Aside = () => {
     {
       id: 2,
       link: "menu",
-      nombre: "Menu"
+      nombre: "Menú"
     },
     {
       id: 3,
       link: "comopedir",
-      nombre: "Como pedir"
+      nombre: "Cómo pedir"
     },
     {
       id: 4,
@@ -51,7 +51,7 @@ export const Aside = () => {
     {
       id: 5,
       link: "sobrenosotros",
-      nombre: "Quienes somos"
+      nombre: "Quiénes somos"
     },
     {
       id: 6,
