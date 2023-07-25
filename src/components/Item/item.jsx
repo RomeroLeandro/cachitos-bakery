@@ -15,7 +15,7 @@ export function Item({Producto}){
     return(
         <div className= "cartItem">
                 <div className='cart-product' key={Producto.id}>
-                    <img src={Producto.img} alt="" />
+                    <img src={Producto.img} alt={Producto.nombre} />
                     <div className='i'>
                         <h3>{Producto.nombre}</h3>
                         <p className='detalle'>{Producto.detalle}</p>

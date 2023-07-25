@@ -266,12 +266,12 @@ nav img {
   color:#000;
 }
 .cart-container{
-  width: fit-content;
+  width: auto;
   height: fit-content;
   max-height: 600px;
   background-color: #FFFFFF;
   padding:  0.5rem ;
-  margin: 0 2rem;
+  margin: 0 1rem;
   border-radius: 15px;
   /* overflow: auto; */
 }
@@ -295,7 +295,7 @@ nav img {
   gap:0.5rem;
   min-height: 200px;
   max-height: 300px;
-  overflow: auto;
+  overflow-x: hidden;
 }
 .Carrito .Fin{
   width: 80%;

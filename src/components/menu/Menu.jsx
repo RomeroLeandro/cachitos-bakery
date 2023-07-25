@@ -192,7 +192,7 @@ export const Menu = () => {
               {ShowAdd
                 ?<>
                 <p>¿Deseas agregar adicionales?</p>
-                {productosPorCategoria["adicionales"].map((item,key) => {
+                {productosPorCategoria["Adicionales"].map((item,key) => {
                   return(
                     <>
                     <div key = {key} className='adicional'>
