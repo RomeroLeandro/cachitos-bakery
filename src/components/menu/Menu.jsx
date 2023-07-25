@@ -50,10 +50,23 @@ export const Menu = () => {
     productosPorCategoria[categoria].push(producto);
   });
 
+  const ChangeStyle = (categoria) =>{
+    categorias.map((item) => {
+      if(item !== categoria){
+        document.getElementById(item).classList.remove('clicked')
+        document.getElementById(item.toLowerCase()).classList.remove('clicked')
+      }
+    })
+    console.log(categoria.toUpperCase(),"Cat")
+    document.getElementById(categoria).classList.add('clicked')
+    document.getElementById(categoria.toLowerCase()).classList.add('clicked')
+  }
 
   const handleCategoriaClick = (categoria) => {
     const categoriaElement = document.getElementById(categoria.toLowerCase());
-    categoriaElement.classList.toggle('clicked');
+    ChangeStyle(categoria)
+    // categoriaElement.classList.add('clicked')
+    console.log(categoriaElement.innerHTML)
     const pos = categoriaElement.getBoundingClientRect().top;
     const offset = pos + window.pageYOffset - 100;
     if (categoriaElement) {
@@ -124,7 +137,7 @@ export const Menu = () => {
       <ul className="category">
         {categorias.map((categoria) => (
           <li key={categoria}>
-            <button onClick={() => handleCategoriaClick(categoria)}>
+            <button onClick={() => handleCategoriaClick(categoria)} id={categoria} className='li'>
               {categoria}
             </button>
           </li>

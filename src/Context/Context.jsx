@@ -20,7 +20,7 @@ export function ContextProvider({children}){
                 let pr = `${item.cant} ${item.nombre}%0D%0A`
                 return pr
             }).join('')}`
-            window.open(`https://wa.me/5492664006000?text=${message}`)
+            window.open(`https://wa.me/59899358314?text=${message}`)
         }
     }
 
