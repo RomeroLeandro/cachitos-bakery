@@ -30,13 +30,13 @@ export const Aside = () => {
   const links = [
     {
       id: 1,
-      link: "menu",
-      nombre: "Menu"
+      link: "",
+      nombre: "Inicio"
     },
     {
       id: 2,
-      link: "comopedir",
-      nombre: "Como pedir"
+      link: "menu",
+      nombre: "Menú"
     },
     
     {
@@ -50,7 +50,7 @@ export const Aside = () => {
       nombre: "Contacto"
     },
     {
-      id: 6,
+      id: 7,
       link: "comunidad",
       nombre: "Comunidad"
     },

@@ -10,7 +10,7 @@ export const Comments = ({ comentarios }) => {
                 <div key={index} className='comment'>
                     <h3>{comentario.nombre}</h3>
                     <div className='valoracion'>
-                        {Array.from({ length: comentario.valoracion }).map((_, index) => (
+                        {Array.from({ length: comentario.estrellas }).map((_, index) => (
                             <span key={index} className='estrella' role='img' aria-label='Estrella'>
                 &#9733;
               </span>

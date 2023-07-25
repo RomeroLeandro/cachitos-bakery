@@ -4,7 +4,7 @@
 
 .text-cachitos{
   display: flex;
-width: 50%;
+width: 70%;
 /* height: 49px; */
 justify-content: center;
 align-items: center;
@@ -59,17 +59,28 @@ line-height: 2;
   height: 100%;
 }
 
+
 @media (min-width: 650px) {
   .home{
-    height: calc(100vh - 60px)
+    height: calc(100vh - 60px);
   }
   .text-cachitos{
-    width: 300px;
+    width: 600px;
   }
   .image-container{
-    height: 200px;
+    width: 100%;
   }
   .description-menu{
     font-size: 24px;
+  }
+  .home-container{
+    height: 75%;
+  }
+  .button-home{
+    width: 250px;
+    height: 50px;
+  }
+  .description-menu{
+    font-size: 2.5rem;
   }
 }

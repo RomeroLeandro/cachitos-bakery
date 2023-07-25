@@ -24,14 +24,6 @@ export const NavBar = () => {
             setSearchVisible(false);
         }
     };
-    // useEffect(() => {
-    //     let tot = 0;
-    //     lista.map((item) =>{
-    //         tot += item.cant * item.precio 
-    //     })
-    //     setTotal(tot)
-    // },[lista])
-
     useEffect(() =>{
         let c = 0;
         let tot = 0;

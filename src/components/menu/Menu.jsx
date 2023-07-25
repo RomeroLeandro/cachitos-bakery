@@ -73,6 +73,7 @@ export const Menu = () => {
       window.scrollTo({top: offset, behavior: 'smooth' });
     }
   };
+  
 
   useEffect(() => {
     const handleResize = () => {

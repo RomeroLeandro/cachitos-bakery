@@ -4,28 +4,29 @@ import { Link } from "react-router-dom";
 export const Opinion = ({ addComment }) => {
     const [nombre, setNombre] = useState('');
     const [comentario, setComentario] = useState('');
-    const [valoracion, setValoracion] = useState(0);
+    const [estrellas, setEstrellas] = useState(0);
     const [enviado, setEnviado] = useState(false);
 
 
     const handleStarClick = (index) => {
-        setValoracion(index);
+        setEstrellas(index);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!nombre || !comentario || valoracion === 0) {
+        if (!nombre || !comentario || estrellas === 0) {
             return; // Si algún campo requerido está vacío, no se envía el comentario
         }
         const newComment = {
             nombre,
             comentario,
-            valoracion,
+            estrellas,
         };
         addComment(newComment);
+        console.log(newComment)
         setNombre('');
         setComentario('');
-        setValoracion(0);
+        setEstrellas(0);
         setEnviado(true);
     };
 
@@ -42,18 +43,18 @@ export const Opinion = ({ addComment }) => {
                 <>
                     <h2 className='add-comment'>Agregar Comentario</h2>
                     <form className='form-container' onSubmit={handleSubmit}>
-                        <label className='label-op'>NOMBRE</label>
+                        <label className='label-op'>Nombre</label>
                         <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
-                        <label className='label-op'>MENSAJE</label>
+                        <label className='label-op'>Mensaje</label>
                         <textarea value={comentario} onChange={(e) => setComentario(e.target.value)} required />
 
                         <label className='label-exp'>
-                            ¿CÓMO FUE TU EXPERIENCIA CON NOSOTROS?</label>
+                            ¿Como fue tu experiencia con nosotros?</label>
                         <div className="star-rating">
                             {[1, 2, 3, 4, 5].map((index) => (
                                 <span
                                     key={index}
-                                    className={`star ${index <= valoracion ? 'filled' : ''}`}
+                                    className={`star ${index <= estrellas ? 'filled' : ''}`}
                                     onClick={() => handleStarClick(index)}
                                 >
                                     ★
