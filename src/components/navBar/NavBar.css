@@ -266,7 +266,7 @@ nav img {
   color:#000;
 }
 .cart-container{
-  width: auto;
+  width: fit-content;
   height: fit-content;
   max-height: 600px;
   background-color: #FFFFFF;
@@ -279,7 +279,7 @@ nav img {
 
 .Carrito{
   margin:auto;
-  padding: 1em;
+  padding: 0.5em;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

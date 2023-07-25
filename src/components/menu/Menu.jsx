@@ -149,15 +149,15 @@ export const Menu = () => {
         <div className='container-full'>  
           {/* <span className='dummy' /> */}
           <div key={categoria} className='container-menu'>
-            <h2 id={categoria}>{categoria}</h2>
+            <h2 style={{fontFamily:'Agane'}} id={categoria}>{categoria}</h2>
             {productos.map((producto) => (
               <>
               <div onClick={() => OpenModal(producto)} className='card-product' key={producto.id}>
                 <img src={producto.img} alt="" />
-                <div>
-                  <h3>{producto.nombre}</h3>
-                  <p className='detalle'>{producto.detalle}</p>
-                  <p>$ {producto.precio}.00</p>
+                <div style={{display:'flex',flexDirection:'column',gap:'10px'}}>
+                  <h3 style={{fontFamily:'Agane'}}>{producto.nombre}</h3>
+                  <p style={{fontFamily:'Agane'}} className='detalle'>{producto.detalle}</p>
+                  <p style={{fontFamily:'Agane'}}>$ {producto.precio}.00</p>
                 </div>
               </div>
               </>

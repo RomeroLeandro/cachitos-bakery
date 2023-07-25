@@ -68,7 +68,7 @@ export const NavBar = () => {
                         {cant > 0 &&
                             <>
                                 <div onClick={() => setOpenCart(1-openCart)} className="notification">{cant}</div>
-                                <p onClick={() => setOpenCart(1-openCart)}>Pulsa aqui para ir al carrito</p>
+                                <p style={{fontFamily:'Agane'}} onClick={() => setOpenCart(1-openCart)}>Pulsa aqui para ir al carrito</p>
                             </>
                         }
                         {/* </Link> */}
