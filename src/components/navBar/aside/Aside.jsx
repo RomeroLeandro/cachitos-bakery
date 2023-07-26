@@ -36,7 +36,7 @@ export const Aside = () => {
     {
       id: 2,
       link: "comopedir",
-      nombre: "Como pedir"
+      nombre: "Cómo pedir"
     },
     {
       id: 3,

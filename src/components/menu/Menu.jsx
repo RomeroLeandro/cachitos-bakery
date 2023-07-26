@@ -169,7 +169,7 @@ export const Menu = () => {
       <Modal
           isOpen = {showModal}
           onRequestClose= {OpenModal}
-          className="modal"          
+          className="modal-product"          
           shouldCloseOnOverlayClick = {false}
           overlayClassName = "cetered-overlay"
           bodyOpenClassName= 'cetered-overlay'
