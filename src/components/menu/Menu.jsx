@@ -131,7 +131,7 @@ export const Menu = () => {
     setShowAdd(0)
     setShowModal(0)
   }
-
+  
   return (
     <div className='Menu-Completo'>
       <div className='container-slick'>
@@ -192,7 +192,7 @@ export const Menu = () => {
               {ShowAdd
                 ?<>
                 <p>¿Deseas agregar adicionales?</p>
-                {productosPorCategoria["Adicionales"].map((item,key) => {
+                {productosPorCategoria["adicionales"].map((item,key) => {
                   return(
                     <>
                     <div key = {key} className='adicional'>
