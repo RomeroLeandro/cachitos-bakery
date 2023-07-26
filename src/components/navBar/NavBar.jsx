@@ -97,7 +97,7 @@ export const NavBar = () => {
                                     })}
                                 </div>
                                 <div className='Fin'>
-                                    <button key={1} onClick={Finish}>Finalizar Pedido (${total})</button>
+                                    <button key={1} onClick={Finish}>Finalizar pedido (${total})</button>
                                     <button key={2} onClick={HandleClear}>Borrar carrito</button>
                                 </div>
                             </>

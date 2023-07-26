@@ -41,7 +41,7 @@ export const Opinion = ({ addComment }) => {
                 </div>
             ) : (
                 <>
-                    <h2 className='add-comment'>Agregar Comentario</h2>
+                    <h2 className='add-comment'>Agregar comentario</h2>
                     <form className='form-container' onSubmit={handleSubmit}>
                         <label className='label-op'>Nombre</label>
                         <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
@@ -49,7 +49,7 @@ export const Opinion = ({ addComment }) => {
                         <textarea value={comentario} onChange={(e) => setComentario(e.target.value)} required />
 
                         <label className='label-exp'>
-                            ¿Como fue tu experiencia con nosotros?</label>
+                            ¿Cómo fue tu experiencia con nosotros?</label>
                         <div className="star-rating">
                             {[1, 2, 3, 4, 5].map((index) => (
                                 <span
@@ -62,7 +62,7 @@ export const Opinion = ({ addComment }) => {
                             ))}
                         </div>
 
-                        <button className='button-opinion' type="submit">ENVIAR</button>
+                        <button className='button-opinion' type="submit">Enviar</button>
                     </form>
                 </>
             )}

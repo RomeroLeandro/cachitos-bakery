@@ -35,14 +35,18 @@ export const Aside = () => {
     },
     {
       id: 2,
+      link: "comopedir",
+      nombre: "Como pedir"
+    },
+    {
+      id: 3,
       link: "menu",
       nombre: "Menú"
     },
-    
     {
       id: 4,
       link: "sobrenosotros",
-      nombre: "Quienes somos"
+      nombre: "Quiénes somos"
     },
     {
       id: 5,

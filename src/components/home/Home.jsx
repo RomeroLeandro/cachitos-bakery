@@ -60,7 +60,7 @@ export const Home = () => {
       <div className='home-container'>
         <img className='text-cachitos' src={textCachitos} alt="cachitos bakery" />
         <p className='description-menu'>¡Los mejores sabores de Venezuela y el Caribe!</p>
-        <Link to={'/menu'}><button className='button-home'>MENÚ</button> </Link>
+        <Link to={'/menu'}><button className='button-home'>Menú</button> </Link>
       </div>
     </div>
 

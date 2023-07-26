@@ -146,9 +146,9 @@ export const Menu = () => {
       </ul>
       </div>
       {Object.entries(productosPorCategoria).map(([categoria, productos]) => (
-        <div className='container-full'>  
+        <div key={`cont-${categoria}`} className='container-full'>  
           {/* <span className='dummy' /> */}
-          <div key={categoria} className='container-menu'>
+          <div key={categoria}  className={`container-menu ${categoria}`}>
             <h2 style={{fontFamily:'Agane'}} id={categoria}>{categoria}</h2>
             {productos.map((producto) => (
               <>
@@ -169,10 +169,11 @@ export const Menu = () => {
       <Modal
           isOpen = {showModal}
           onRequestClose= {OpenModal}
-          className="modal"
-          
+          className="modal"          
           shouldCloseOnOverlayClick = {false}
           overlayClassName = "cetered-overlay"
+          bodyOpenClassName= 'cetered-overlay'
+          htmlOpenClassName= 'cetered-overlay'
       >
         <div /*onClick={CloseModal}*/ className='modal-container'>
           <div className='modal-center'>
@@ -184,8 +185,8 @@ export const Menu = () => {
               <p>${productoModal.precio}</p>
             </div>
             <div className='buttons'>
-              <button onClick={Pedir}>PEDIR</button>
-              <button onClick={() => AddtoCart(productoModal)}>AGREGAR AL CARRITO</button>
+              {/* <button onClick={Pedir}>PEDIR</button> */}
+              <button onClick={() => AddtoCart(productoModal)}>Agregar al carrito</button>
               <button onClick={() => {setShowAdd(1- ShowAdd)}} className='add'>{ShowAdd ? "^" : "v"}</button>
             </div>
             <div className='adicionales'>

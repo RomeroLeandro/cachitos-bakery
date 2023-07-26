@@ -69,6 +69,11 @@ width: 100%;
   flex-direction: column;
   margin-top: 30px;
   width: 100%;
+  /* border: 1px solid red; */
+}
+.container-full .lasaña{
+  /* border: 1px solid red; */
+  margin-bottom: 500px;
 }
 .container-menu h2{
   text-align: left;
@@ -79,6 +84,10 @@ width: 100%;
   justify-content: center;
   margin: 10px;
 }
+/* .container-full :last-child{
+  margin-bottom: 300px;
+} */
+
 .container-full hr{
   width: 80%;
   align-self: center;
@@ -98,6 +107,7 @@ width: 100%;
   position: fixed;
   background-color: rgba(0,0,0,0.5);
   top:0;
+  /* border:1px solid springgreen; */
   margin:0;
 }
 .modal .close-modal{
@@ -119,6 +129,8 @@ width: 100%;
 }
 .modal-container .modal-center{
   background-color: #FFFFFF;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -126,11 +138,13 @@ width: 100%;
   border-radius: 15px;
   padding-bottom: 1rem;
   gap:0.5rem;
+  font-size: 13px;
 }
 
 .modal-center img{
   border-radius: 0 0 15px 15px;
   width: 100%;
+  max-width: 500px;
 }
 
 .modal-center .text-container{
@@ -139,12 +153,18 @@ width: 100%;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  gap:0.5rem;
+  /* border: 1px solid red; */
+}
+.modal-center .text-container *{
+  text-align: start
 }
 /* ESTILOS PARA LA BOTONERA */
 .modal-center .buttons{
   width: 90%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap:0.5rem;
 }
 .modal-center .buttons button:not(.add){
@@ -182,10 +202,17 @@ width: 100%;
   gap:0.5rem;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (min-width: 450px) {
   .container-full{
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
+  .modal-center{
+    border-radius: 0 0 15px 15px;
+    width: 30%;
+  }
+  /* .modal-center img{
+    width: 400px;
+  } */
 }
