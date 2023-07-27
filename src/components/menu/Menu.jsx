@@ -93,7 +93,7 @@ export const Menu = () => {
 
   const OpenModal = (item,event) =>{
     // event.stopPropagation();
-    setShowModal(1 - showModal)
+    setShowModal(!showModal)
     setProductoModal(item)
   }
   const CloseModal = (event) =>{
@@ -135,7 +135,7 @@ export const Menu = () => {
       <div className='container-slick'>
       <ul className="category">
         {categorias.map((categoria) => (
-          <li key={categoria}>
+          <li key={`cat${categoria}`}>
             <button onClick={() => handleCategoriaClick(categoria)} id={categoria} className='li'>
               {categoria}
             </button>
@@ -145,12 +145,11 @@ export const Menu = () => {
       </div>
       {Object.entries(productosPorCategoria).map(([categoria, productos]) => (
         <div key={`cont-${categoria}`} className='container-full'>  
-          {/* <span className='dummy' /> */}
-          <div key={categoria}  className={`container-menu ${categoria}`}>
+          <div  className={`container-menu ${categoria}`}>
             <h2 style={{fontFamily:'Agane'}} id={categoria}>{categoria}</h2>
             {productos.map((producto) => (
               <>
-              <div onClick={() => OpenModal(producto)} className='card-product' key={producto.id}>
+              <div key={producto.nombre} onClick={() => OpenModal(producto)} className='card-product'>
                 <img src={producto.img} alt="" />
                 <div style={{display:'flex',flexDirection:'column',gap:'10px'}}>
                   <h3 style={{fontFamily:'Agane'}}>{producto.nombre}</h3>
@@ -194,7 +193,7 @@ export const Menu = () => {
                 {productosPorCategoria["adicionales"].map((item,key) => {
                   return(
                     <>
-                    <div key = {key} className='adicional'>
+                    <div key = {`ad-${item.nombre}`} className='adicional'>
                       <p>{item.nombre}</p>
                       <div>
                         <p>$ {item.precio}</p>

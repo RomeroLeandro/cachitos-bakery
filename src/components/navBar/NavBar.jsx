@@ -13,7 +13,7 @@ export const NavBar = () => {
     const searchRef = useRef(null);
     const {lista, Clean, Finish} = useContext(Context);
     const [total, setTotal] = useState(0);
-    const [openCart, setOpenCart] = useState(0);
+    const [openCart, setOpenCart] = useState(false);
 
     const handleSearchIconClick = () => {
         setSearchVisible(!isSearchVisible);
@@ -67,7 +67,7 @@ export const NavBar = () => {
                         </svg>
                         {cant > 0 &&
                             <>
-                                <div onClick={() => setOpenCart(1-openCart)} className="notification">{cant}</div>
+                                <div onClick={() => setOpenCart(!openCart)} className="notification">{cant}</div>
                                 <p style={{fontFamily:'Agane', padding:'5px', width:'320px'}} onClick={() => setOpenCart(1-openCart)}>Haz click aquí para continuar con tu pedido</p>
                             </>
                         }
@@ -87,7 +87,7 @@ export const NavBar = () => {
             </nav>
             <Modal className="modal-cart" isOpen = {openCart} onRequestClose = {() => setOpenCart(0)} overlayClassName = "cetered-overlay">
                 <div className="cart-container">
-                    <button className='close-modal' onClick={() => setOpenCart(0)}>X</button>
+                    <button className='close-modal' onClick={() => setOpenCart(false)}>X</button>
                     <div className="Carrito">
                         {lista.length > 0
                             ?<>
